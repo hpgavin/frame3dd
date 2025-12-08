@@ -26,7 +26,8 @@ iframe {background-color: #000000; margin-top: 5px; margin-bottom: 5px, border:0
 
 <body>
 
-<img src="img/psoe.jpg" height="100" align="left" border="0">
+
+<img src="http://hpgavin.github.io/frame3dd/web/img/psoeBlueCrop.png" height="100" align="left" border="0">
 <font face="Arial, Helvetica, sans-serif" size="4">
 <nobr><b>User manual and reference for <a href="https://hpgavin.github.io/frame3dd/">Frame3DD: A 3D Structural Frame Analysis Program</a></b>
 </nobr><br></font>
@@ -56,9 +57,8 @@ Henri P. Gavin, Ph.D., P.E., </font></i>
 <!-- 3D frames , 3D frames , 3D frames , 3D frames , 3D frames , 3D frames  -->
 
 <p><b>Frame3DD</b> is preferably executed from the
-<a href="http://en.wikipedia.org/wiki/Windows_command_line">command prompt</a> (Windows)
-or <a href="http://en.wikipedia.org/wiki/Unix_shell">shell</a> (Linux), <a href="http://www.macdevcenter.com/pub/a/mac/2001/12/14/terminal_one.html">terminal</a> (OS X),
-or <a href="http://en.wikipedia.org/wiki/Apple_X11">xterm</a> (Linux or OS X) as follows, with filenames changed as required:
+<a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a> in <a href="https://en.wikipedia.org/wiki/Windows_Terminal">Windows</a>, 
+or <a href="https://en.wikipedia.org/wiki/Linux_console">Linux</a> or macOS  <a href="https://en.wikipedia.org/wiki/Terminal_(macOS)">macOS</a>  as follows: 
 <pre>
 frame3dd inputfile.3dd outputfile.txt
 </pre>
@@ -72,14 +72,15 @@ frame3dd inputfile.3dd outputfile.txt
 
 <!-- 3D frames , 3D frames , 3D frames , 3D frames , 3D frames , 3D frames  -->
 
-<p><b>Frame3DD</b> appends results to a plain-text <b>Output Data file</b>.
-Results from the most recent analysis
-are appended to the <b>end</b> of the Output Data file.
+<p>
+<b>Frame3DD</b> appends results to a plain-text <b>Output Data file</b>.
+Results from the most recent analysis are appended to the <b>end</b> of the Output Data file.
 Each section of the Output Data gives the date and time of the analysis,
 recapitulates the input information, gives node displacements in global coordinates, frame element end-forces in local coordinates, reactions in global coordinates, and natural frequencies and mode shapes in global coordinates.
 </p>
 
-<p><b>Frame3DD</b> writes a
+<p>
+<b>Frame3DD</b> writes a
 <a href="http://www.gnuplot.info/">gnuplot</a>
 script file used for viewing deformed frames and dynamic mode shapes.
 If the Output Data is written to a file called <b>MyResultsA.out</b>,
@@ -88,11 +89,13 @@ Graphical output may be viewed by starting gnuplot and typing:
 <b> load 'MyResultsA.plt'</b>.
 </p>
 
-<p><b>Frame3DD</b> can consider multiple static load cases in a single analysis.
+<p>
+<b>Frame3DD</b> can consider multiple static load cases in a single analysis.
 Separate output data files list the internal axial force, shear forces, torsion, and bending moments along each frame element for each static load case.
 </p>
 
-<p><b>Frame3DD</b> may optionally interface with Matlab and with spreadsheet programs.
+<p>
+<b>Frame3DD</b> may optionally interface with Matlab and with spreadsheet programs.
 </p>
 
 <p><b>Frame3DD</b> is <b>free open-source software</b>; you may redistribute it and/or modify it under
@@ -104,13 +107,12 @@ The software is distributed in the hope that it will be useful, but without any 
 <a href="http://gcc.gnu.org/"><b>gcc</b></a> compiler.
 </p>
 
-<p><b>Frame3DD</b> had a free <a href="http://www.sketchup.com/"><b>Sketchup</b></a> interface available 
+<p>
+<b>Frame3DD</b> had a free <a href="http://www.sketchup.com/"><b>Sketchup</b></a> interface available 
 <a href="http://sketchucation.com/forums/viewtopic.php?t=46405">here</a>.
 
-<p>If you find <b>Frame3DD</b> to be useful please consider
-a donation to the vim charity, 
-<a href="http://iccf-holland.org/">iccf-holland</a>, which provides education 
-and health-care to needy children in Uganda.
+<p>
+If you find <b>Frame3DD</b> to be useful please consider a donation to the vim charity, <a href="http://iccf-holland.org/">iccf-holland</a>, which provides education and health-care to needy children in Uganda.
 </p>
 
 <!--
@@ -138,11 +140,7 @@ via <a href="http://www.gnuplot.info/">gnuplot</a> version 4.6.
 <li><a href="#starting">Getting started</a>
 <li><a href="#iodata"/>Input Data and Output Data</a>
 <li><a href="#installrun"/>How to install and run Frame3DD</a>
-<ol>
-  <li><a href="#runlinux"/>Linux</a>
-  <li><a href="#runosx"/>Mac OS X</a>
-  <li><a href="#runwindows"/>Windows</a>
-</ol>
+<li><a href="#setting path environment variables"/>pathenv</a>
 <li><a href="#Matlab">Matlab Interface</a>
 <li><a href="#CSV">Spreadsheet Interface</a>
 <li><a href="#FrameEd">FrameEd</a>
@@ -163,12 +161,14 @@ via <a href="http://www.gnuplot.info/">gnuplot</a> version 4.6.
 <ol>
 <li>Read the User Manual and Reference (this file).
 <li>
-<a href="http://sourceforge.net/project/platformdownload.php?group_id=221386" -->
-Downloads from Sourceforge</a>
-<a href="https://github.com/hpgavin/frame3dd/graphs/traffic" -->Downloads from GitHub</a>
-Frame3DD and save the Frame3DD folder to your Desktop (more details below).
-<li>Optionally, obtain a copy of gnuplot for your operating system (more details below).
-<li>Open a terminal window, go to the Frame3DD directory, and run the program on one of the examples using a command like ...
+<a href="https://github.com/hpgavin/frame3dd/">Downloads from GitHub</a> <br> 
+<pre>
+git clone http://github.org/hpgavin/frame3dd 
+</pre>
+<a href="http://sourceforge.net/project/platformdownload.php?group_id=221386"> Downloads from Sourceforge</a> are no longer updated <br> 
+
+<li>Optionally, install gnuplot for your operating system (more details below).
+<li>Open a terminal, go to the Frame3DD directory, and run the program on one of the examples using a command like ...
 <pre>
 cd ~/Desktop/Frame3DD
 frame3dd  examples/exE.3dd  examples/exE.out
@@ -260,7 +260,10 @@ The additional output files will then appear in the folder you have specified.
 <a name="installrun"/><h2>3. How to install and run Frame3DD</h2>
 
 <p>
-<b>to install:</b>   git clone http://github.com/hpgavin/frame3dd
+<b>Clone the GitHub repository </b>  
+<pre>
+git clone http://github.com/hpgavin/frame3dd
+</pre>
 
 <ul>
 The repository includes ...
@@ -280,23 +283,25 @@ The repository includes ...
 The date stamp at the beginning of the manual corresponds to the release date of the code.
 </p>
 
-<a name="runlinux"/><h3>3.1 Linux</h3>
-
-<h4>3.1.1 Installing Frame3DD from the .ZIP archive for Linux</h4>
+<a name="pathenv"/><h3>3.1 Setting Path Environment Variables </h3>
 
 <li>
 <b><i>Recommended</i></b><br>
 Put the <b>Frame3DD</b> directory in your path and set the <b>FRAME3DD_OUTDIR</b> location.<br>
-To do this, double-click the <b>Home</b> icon on the Desktop, and select <b>View > Show Hidden Files</b><br><br>
+To do this, open a Terminal window, navigate to your home directory, and list the files 
+<pre>
+cd ~
+ls -ad  ~/.*
+</pre>
 
 <ul>
-<li>If you have a file called <b>~/.profile</b> or <b>~/.zprofile</b> in your home directory,
-copy-and-paste the following ten lines into the beginning of <b>~/.profile</b> or <b>~/.zprofile</b>
+<li>
+Copy-and-paste the following ten lines into the beginning of <b>~/.profile</b>(linux)  or <b>~/.zprofile</b>(macOS) or <b>$PROFILE</b>(Windows) 
 <pre>
 # for Frame3DD ... http://github.com/hpgavin/frame3dd/
 # add Frame3DD executable directory to the path
-export PATH=$PATH:$HOME/Desktop/Frame3DD/linux/ 
-# create a Frame3DD output directory
+export PATH=$PATH:$HOME/Desktop/frame3dd/
+# create a frame3dd output directory
 if [ ! -d /tmp/frame3dd_temp_$USER ]; then
     mkdir /tmp/frame3dd_temp_$USER
     echo "creating /tmp/frame3dd_temp_$USER for Frame3DD"
@@ -306,85 +311,51 @@ export FRAME3DD_OUTDIR=/tmp/frame3dd_temp_$USER
 </pre>
 ... save, and exit the editor.   
 
-<!-- 
-<li>If you have a file named <b>~/.login</b> in your home directory,
-open it with a double-click. 
-Copy-and-paste the following ten lines into the beginning of <b>~/.login</b> 
+<li> 
+Then, execute  
 <pre>
-# for Frame3DD ... http://github.com/hpgavin/frame3dd/
-# add Frame3DD executable directory to the path
-set path = ( $path $home/Desktop/Frame3DD/linux )
-# create a Frame3DD output directory
-if ( ! -d /tmp/frame3dd_temp_$user ) then
-    mkdir /tmp/frame3dd_temp_$user
-    echo "creating /tmp/frame3dd_temp_$user for Frame3DD"
-endif
-# specify the Frame3DD output directory
-setenv FRAME3DD_OUTDIR /tmp/frame3dd_temp_$user
-</pre>
-... save, and exit the editor.   <br>.
--->
-
-<li> Open a Terminal window. (Right-click on an open part of the Desktop and select <b>Open Terminal</b>), and type:  
-<pre>
-source ~/.profile   # if you edited ~/.profile 
+source ~/.profile    # linux
+source ~/.zprofile   # macOS
+. $PROFILE           # Windows 
 </pre>
 </ul>
-</ol>
 
-<h4>3.1.2 Running Frame3DD in Linux</h4>
+<h3>3.2 Running Frame3DD in a Terminal</h3>
 
 <ol>
-<li> Open a Terminal window. (Right-click on an open part of the Desktop and select <b>Open Terminal</b>.) <br>
-Change to the directory containing the Frame3DD example files and run an example, as follows. 
+<li> Open a Terminal window.  <br>
+Navigate to the directory containing the Frame3DD example files and run an example, like this: 
 <pre>
-cd  ~/Desktop/Frame3DD
+cd  ~/Desktop/frame3dd
 frame3dd  examples/exE.3dd  examples/exE.out                      
 </pre>
 Some run-time information will be displayed on the Terminal and
 the results of your Frame3DD analysis will have been appended to the end of the <b>examples/exE.out</b> Output Data file.
 Data files used primarily for plotting are stored in the <b>/tmp/frame3dd_temp_$USER</b> directory.
-<li>       You may view Output Data files and edit Input Data files using a good text editor
-(<a href="http://www.vim.org/others.php">vim/evim/gvim</a>,
- <a href="http://www.gnome.org/projects/gedit/">gedit</a>,
- <a href="http://www.nano-editor.org/">nano</a>),
-or a spreadsheet program
-(<a href="http://docs.google.com/">GoogleDocs</a>,
- <a href="http://www.libreoffice.org/">LibreOffice</a>,
- <a href="http://projects.gnome.org/gnumeric/">Gnumeric</a>).  For example, 
-to read or edit the Input Data file.   Double-click the <b>Home</b> icon on the Desktop, navigate to the directory of your data files, right click
-on the Data File and select the editor of your choice.
-The text editors
- <a href="http://www.vim.org/others.php">vim/evim/gvim</a>, 
- <a href="http://www.gnome.org/projects/gedit/">gedit</a>,  and
- <a href="http://www.nano-editor.org/">nano</a>, 
-should already be installed;
-there should be no need to install another editor.
+<li>       You may view Output Data files and edit Input Data files using a good text editor (TextEdit (macOS), Notebook (Windows), pico (linux))
+or a spreadsheet program (google docs or libreoffice or excel) 
+to read or edit the Input Data file. 
+<!-- 
 Three tutorials for vim/evim/gvim are <a href="http://www.jerrywang.net/vi/">here</a>, 
 <a href="http://thomer.com/vi/vi.html">here</a>, and
 <a href="http://www.duke.edu/~hpgavin/vi.html">here</a>. 
-
-<li>Proceed by running your own <b>Frame3DD</b> analyses using a command like ...
-<pre>
-frame3dd  examples/MyFrame.3dd  examples/MyResultsA.out
-</pre>
-(within a Terminal window).  
-<!-- <li> You may wish to delete all the files in the temporary file directory (c:\temp) after you have finished your analyses.  -->
+-->
 </ol>
 
 
-<h4>3.1.3 Plotting Results with <a href="http://www.gnuplot.info/">gnuplot</a> in Linux </h4>
+<h3>3.3 Plotting Results with <a href="http://www.gnuplot.info/">gnuplot</a> </h3>
 
 <ol>
-<li> Gnuplot is commonly pre-installed on Linux systems.
-If it is not, you may install it only if you have root privileges using a command like ... <tt> sudo apt-get install gnuplot </tt> ... or by using the package manager GUI installed on your system.
+<li> 
+<b><a href="http://www.gnuplot.info/">gnuplot</a>  Install gnuplot</b> for OS X,  Windows, or Linux. 
+install it only if you have root privileges using a command like ... <tt> sudo apt-get install gnuplot </tt> (Linux)  ... or by using the package manager GUI installed on your system.
 
-<li>Change directories to your Frame3DD directory and Start gnuplot in the Terminal with the command:
+<li>In a Terminal, navigate to your Frame3DD directory and Start gnuplot in the Terminal with the command:
 <pre>
 cd ~/Desktop/Frame3DD/examples
 gnuplot
 </pre>
-<li>Change directories to Display the plots of your structure using gnuplot with a command like ...
+<li>Display the plots of your structure using gnuplot with a command like ...
 <pre>
       gnuplot>  load 'MyResultsA.plt'
 </pre>
@@ -406,37 +377,27 @@ Or hit <b>CTRL-C</b> to stop the plots at the current plot.
       toggle mouse functions on/off  :  the 'm' key
       undo shift                     :  the 'u' key
 </pre>
+<!-- 
 <li> To save the current plot as a PostScript file in the Frame3DD/examples directory, use the <b>saveplot</b> script included in the Frame3DD/examples directory.
 <pre>
      gnuplot>  load 'saveplot'
      gnuplot>  !cp my-plot.ps PlotFileA.ps
 </pre>
+--> 
 <li>After finishing with your plots, you can exit gnuplot by typing  ...
 <pre>
      gnuplot>  quit
 </pre>
 </ol>
 
-<h4>3.1.4 Compiling Frame3DD from source for Unix or Linux</h4>
+<h3>3.4 Compiling Frame3DD from source for Unix or Linux</h3>
 
-<p>
-The following instructions work on Ubuntu 8.10 - 14.04
-and should work with minor changes on any other recent Linux or Unix system.
-There are two options for compiling under Linux:
-</p>
-
-<ol> 
-<li> Compiling using <b>make:</b>
-<ol>
-<li> Open a Terminal window,
-(Right-click on an open part of the Desktop and select <b>Open Terminal</b>.) 
-and compile the code
+Open a Terminal window, and compile the code
 <pre>
-cd ~/Desktop/frame3dd/src/
+cd ~/Desktop/frame3dd/
 make
-mv frame3dd ../linux/
+made install 
 </pre>
-</ol>
 <!-- 
 <li> Compiling using SCONS: 
 <ol>
@@ -451,10 +412,7 @@ sudo apt-get install build-essential scons
 sudo apt-get install libsoqt-dev4
 </pre>
 
-<a href="http://sourceforge.net/project/platformdownload.php?group_id=221386">Download</a>
-Download</a> the Frame3DD source-code tarball (frame3dd-VERSION.tar.bz2)
-and save it in your home directory.
-
+git clone https://github.com/hpgavin/frame3dd
 
 <li>Open a Terminal, unpack the source code, enter the source directory,
 and build the code, as follows:
@@ -482,120 +440,27 @@ export PATH=$PATH:~/frame3dd-VERSION/build
 </ol>
 -->
 
+<!-- 
 <a name="runosx"/><h3>3.2 Mac OS X</h3>
 
-<!-- 
 <div class="note"><b>Note:</b> The following binary downloads have not been updated
 for some time and may give you problems. You may have more success trying to build
 from source following the instructions for Linux or Unix.</div>
--->
 
-<!-- 
 <p>
 For OS X running on an Intel processor, you may install Frame3DD from the .ZIP archive 
 or you may compile from the source code.
 The following instructions install Frame3DD to the <b>Desktop</b> but other directories may be substituted, if so desired.  
 </p>
--->
   
-<h4> 3.2.1 Installing Frame3DD from the .ZIP archive for OS X</h4>
-
-<ol>
-<li>
-<!-- a href="https://sourceforge.net/projects/frame3dd/files/" -->
-<!-- a href="https://sourceforge.net/projects/frame3dd/files/latest/download?source=files" -->
-<a href="https://github.com/hpgavin/frame3dd/"> frame3dd > build > osx 
-Download</a>
-the Frame3DD .ZIP archive (Frame3DD_VERSION.zip) and save it in your <b>Desktop</b>.<br>
-If the .ZIP archive was not automatically unzipped, 
-simply drag the <b>Frame3DD</b> folder icon to your <b>Desktop</b>. 
-<li><b><i>Optional</i></b><br>
-Download the <b>Sketchup</b> interface for <b>Frame3DD</b>, available
-<a href="http://sketchucation.com/forums/viewtopic.php?t=46405">here</a>.
-<li><b><i>Recommended</i></b><br>
-Put the <b>Frame3DD</b> directory in your path and set the <b>FRAME3DD_OUTDIR</b> location.<br>
-<ul>
-<li> Open your <b>~/.profile</b> file ... 
-open a Terminal window (<b>Applications > Utilities > X11</b> or <b>Applications > Utilities > Terminal</b>)
-and type:
-<pre>
-touch ~/.profile
-open  -a  TextEdit  ~/.profile
-</pre>
-<li> Copy-and-paste the following ten lines into the beginning of your <b>~/.profile</b> file ...
-<pre>
-# for Frame3DD ... https://github.com/hpgavin/frame3dd/
-# add Frame3DD executable directory to the path
-export PATH=$PATH:$HOME/Desktop/Frame3DD/osx/
-# create a Frame3DD output directory
-if [ ! -d /tmp/frame3dd_temp_$USER ]; then
-    mkdir /tmp/frame3dd_temp_$USER
-    echo "creating /tmp/frame3dd_temp_$USER for Frame3DD"
-fi
-# specify the Frame3DD output directory
-export FRAME3DD_OUTDIR=/tmp/frame3dd_temp_$USER
-</pre>
-<li> Save and Quit <b>TextEdit</b>, and, in the Terminal, type:   
-<pre>
-source ~/.profile
-</pre>
-</ul>
-</ol>
-
-<h4> 3.2.2 Running Frame3DD in OS X</h4>
-
-<ol>
-<li> Open a Terminal window (<b>Applications > Utilities > X11</b> or <b>Applications > Utilities > Terminal</b>)
-change to the directory of example files and run an example.
-<pre>
-cd  ~/Desktop/Frame3DD   
-frame3dd  examples/exE.3dd  examples/exE.out        
-</pre>
-Some run-time information will be displayed on the Terminal and
-the results of your Frame3DD analysis will have been appended to the end of the 
-<b>examples/exE.out</b> Output Data file. Data files used primarily for plotting are stored in the <b>/tmp/frame3dd_temp_$USER</b> directory. 
-
-<li>     You may view Output Data files and edit Input Data files using a good text editor
-(<a href="http://code.google.com/p/macvim/">vim/evim/gvim</a>, 
- <a href="http://www.gnome.org/projects/gedit/">gedit</a>,
- <a href="http://www.jedit.org/index.php">jEdit</a>), 
-or a spreadsheet program
-(<a href="http://docs.google.com/">GoogleDocs</a>,
-<a href="http://www.libreoffice.org/">LibreOffice</a>).<br>
-Three tutorials for vim/evim/gvim are <a href="http://www.jerrywang.net/vi/">here</a>, 
-<a href="http://thomer.com/vi/vi.html">here</a>, and
-<a href="http://www.duke.edu/~hpgavin/vi.html">here</a>. 
-If you use Apple's TextEdit,
-make sure you are in Plain Text mode  ...  [SHIFT] [APPLE] [T] ...  or ...   <b>Format > Make Plain Text </b> ... <br>
-<li>
-Proceed by running your own <b>Frame3DD</b> analyses using a command like ...
-<pre>
-frame3dd  examples/MyFrame.3dd  examples/MyResultsA.out
-</pre>
-(within a Terminal window).  
-</ol>
-
-<h4>3.2.3 Plotting Results with <a href="http://www.gnuplot.info/">gnuplot</a> in OS X</h4>
-
-<!--
-<p>
-For a version of gnuplot for OS X-Intel, or for a version with mouse-scrolling and panning features,
-install <a href="http://www.apple.com/macosx/features/x11/">X11</a> and <a href="http://developer.apple.com/tools/">Apple Development Tools</a>, and then <a href="http://maba.wordpress.com/2006/08/02/scientific-plotting-on-mac-os-x-using-gnuplot-and-plot/">compile gnuplot from sources</a>.
-</p>
--->
-
-<p>
-<b>Installing <a href="http://www.gnuplot.info/">gnuplot</a> for OS X</b>
-</p>
-
 <p>
 From you Mac's Administrator account, first install Xcode, then install MacPorts, and finally install gnuplot.
 <ol>
 <li>Install <a href="https://developer.apple.com/xcode/">Xcode</a>,
-<!-- join ADC to create an account, log in, and then click on <b>Downloads > Developer Tools</b>, and browse for the version of Xcode for your version of OS X.<br> 
+ join ADC to create an account, log in, and then click on <b>Downloads > Developer Tools</b>, and browse for the version of Xcode for your version of OS X.<br> 
 For OS X <b>10.4</b> Tiger, install Xcode <b>2.5</b> Developer Tools<br>
 For OS X <b>10.5</b> Leopard, install Xcode <b>3.1.4</b> Developer Tools<br>
-For OS X <b>10.6</b> Snow Leopard, install Xcode <b>3.2.1</b> Developer Tools<br> -->
+For OS X <b>10.6</b> Snow Leopard, install Xcode <b>3.2.1</b> Developer Tools<br> 
 Make sure the "Unix Development" option is selected if installing Xcode 3.1.4 or 3.2.1. 
 <li> To install MacPorts
 for your version of OS X (10.4 Tiger, 10.5 Leopard, or 10.6 Snow Leopard),
@@ -608,7 +473,7 @@ sudo port install gnuplot
 If this is your first MacPorts package installation, it will take several minutes to complete.
 </ol>
 </p>
-<!--
+
 <li>        Test that gnuplot works.
          Open a Terminal window (Applications > Utilities > Terminal) and 
 <pre>
@@ -616,7 +481,7 @@ gnuplot
      gnuplot>  plot sin(x)
      gnuplot>  quit
 </pre>
--->
+
 
 <p>
 <b>Running <a href="http://www.gnuplot.info/">gnuplot</a> in OS X</b>
@@ -679,7 +544,7 @@ and animations until the <b>gnuplot></b> prompt returns.
 <p>
 For Microsoft Windows, 
 you may install Frame3DD from the .ZIP archive
-<!-- (recommended), you may use a binary installer (which is currently out of date), -->
+(recommended), you may use a binary installer (which is currently out of date), 
 or you may compile from the source code.
 The following instructions install Frame3DD to the <b>Desktop</b> but other directories may be substituted, if so desired.  
 </p>
@@ -728,7 +593,7 @@ Please enter the output data file name:  examples/exE.out
 
 Alternatively, you may open a 
 "<a href="http://www.bleepingcomputer.com/tutorials/tutorial76.html#intro">command prompt window</a>" 
-<!-- <a href="http://en.wikipedia.org/wiki/Windows_command_line">Command Prompt</a> window -->
+<a href="http://en.wikipedia.org/wiki/Windows_command_line">Command Prompt</a> window 
 (<b>Start > All Programs > Accessories > Command Prompt</b>),
 or an
 <a href="https://github.com/adoxa/aansicon/downloads/">ansicon</a> window.<br> 
@@ -759,13 +624,12 @@ frame3dd  examples/MyFrame.3dd  examples/MyResultsA.out
 </pre>
  ... within a Command Prompt or
 <a href="https://github.com/adoxa/ansicon/downloads/">ansicon</a> window.  
-<!-- <li> You may wish to delete all the files in the temporary file directory (c:\temp) after you have finished your analyses.  -->
+ <li> You may wish to delete all the files in the temporary file directory (c:\temp) after you have finished your analyses.  
 </ol>
 
 <h4>3.3.3 Plotting Results with <a href="http://www.gnuplot.info/">gnuplot</a> in Windows</h4>
 
 <p>
-<b>Installing <a href="http://www.gnuplot.info/">gnuplot</a> for Windows</b>
 
 <ol>
 <li>
@@ -818,6 +682,7 @@ is the name of of the specified Output Data file.
 </pre>
 </ol>
 </p>
+-->
 
 
 <!-- 
@@ -859,6 +724,7 @@ Data files used primarily for plotting are stored in the <b>Desktop\Frame3DD\tem
 </ol>
 -->
 
+<!-- 
 <h4> 3.3.4 Compiling Frame3DD from source for Windows </h4>
 
 <ol>
@@ -866,10 +732,9 @@ Data files used primarily for plotting are stored in the <b>Desktop\Frame3DD\tem
 <a href="http://www.delorie.com/djgpp/"> DJGPP gcc compiler</a>,
 the <a href="http://www.cs.virginia.edu/~lcc-win32/"> LCC-win32 compiler</a>,
 or the <a href="http://www.mingw.org/"> MinGW compiler</a>.
-<!-- a href="https://sourceforge.net/projects/frame3dd/files/" -->
-<!-- a href="https://sourceforge.net/projects/frame3dd/files/latest/download?source=files" -->
-<a href="http://sourceforge.net/project/platformdownload.php?group_id=221386">
-+Download</a>
+<a href="https://sourceforge.net/projects/frame3dd/files/"</a> 
+<a href="https://sourceforge.net/projects/frame3dd/files/latest/download?source=files" </a>
+<a href="http://sourceforge.net/project/platformdownload.php?group_id=221386"> +Download</a>
 the Frame3DD .ZIP archive (Frame3DD_VERSION.zip) and save it to your <b>Desktop</b>.<br>
 If the .ZIP archive was not automatically unzipped, 
 double-click the icon to extract it to your <b>Desktop</b>. 
@@ -880,6 +745,7 @@ make
 move frame3dd ..\windows\.
 </pre>
 </ol>
+-->
 
 <a name="Matlab"><h2>4. Matlab Interface</h2>
 
