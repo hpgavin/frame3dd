@@ -1,0 +1,645 @@
+________________________________________________________________________________
+Frame3DD version: 20140514+               http://frame3dd.sf.net/
+GPL Copyright (C) 1992-2015, Henri P. Gavin 
+Frame3DD is distributed in the hope that it will be useful but with no warranty.
+For details see the GNU Public Licence: http://www.fsf.org/copyleft/gpl.html
+________________________________________________________________________________
+
+Example J: tesseract  (N  mm  ton) 
+Mon Dec  8 15:44:50 2025
+________________________________________________________________________________
+In 2D problems the Y-axis is vertical.  In 3D problems the Z-axis is vertical.
+________________________________________________________________________________
+   16 NODES              0 FIXED NODES       32 FRAME ELEMENTS   1 LOAD CASES   
+________________________________________________________________________________
+N O D E   D A T A                                           R E S T R A I N T S
+  Node       X              Y              Z         radius  Fx Fy Fz Mx My Mz
+    1     100.000000     100.000000    -100.000000    0.000   0  0  0  0  0  0
+    2    -100.000000     100.000000    -100.000000    0.000   0  0  0  0  0  0
+    3    -100.000000    -100.000000    -100.000000    0.000   0  0  0  0  0  0
+    4     100.000000    -100.000000    -100.000000    0.000   0  0  0  0  0  0
+    5     100.000000     100.000000     100.000000    0.000   0  0  0  0  0  0
+    6    -100.000000     100.000000     100.000000    0.000   0  0  0  0  0  0
+    7    -100.000000    -100.000000     100.000000    0.000   0  0  0  0  0  0
+    8     100.000000    -100.000000     100.000000    0.000   0  0  0  0  0  0
+    9      70.000000      70.000000     -70.000000    0.000   0  0  0  0  0  0
+   10     -70.000000      70.000000     -70.000000    0.000   0  0  0  0  0  0
+   11     -70.000000     -70.000000     -70.000000    0.000   0  0  0  0  0  0
+   12      70.000000     -70.000000     -70.000000    0.000   0  0  0  0  0  0
+   13      70.000000      70.000000      70.000000    0.000   0  0  0  0  0  0
+   14     -70.000000      70.000000      70.000000    0.000   0  0  0  0  0  0
+   15     -70.000000     -70.000000      70.000000    0.000   0  0  0  0  0  0
+   16      70.000000     -70.000000      70.000000    0.000   0  0  0  0  0  0
+F R A M E   E L E M E N T   D A T A					(local)
+  Elmnt  J1    J2     Ax   Asy   Asz    Jxx     Iyy     Izz       E       G roll  density        L  
+    1     1     2  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+    2     2     3  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+    3     3     4  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+    4     4     1  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+    5     5     6  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+    6     6     7  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+    7     7     8  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+    8     8     5  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+    9     9    10  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   10    10    11  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   11    11    12  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   12    12     9  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   13    13    14  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   14    14    15  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   15    15    16  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   16    16    13  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   17     1     5  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+   18     2     6  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+   19     3     7  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+   20     4     8  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     200.000000
+   21     9    13  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   22    10    14  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   23    11    15  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   24    12    16  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09     140.000000
+   25     1     9  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09      51.961524
+   26     2    10  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09      51.961524
+   27     3    11  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09      51.961524
+   28     4    12  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09      51.961524
+   29     5    13  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09      51.961524
+   30     6    14  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09      51.961524
+   31     7    15  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09      51.961524
+   32     8    16  100.0  60.0  60.0  500.0  1000.0  1000.0   9990.0  3800.0   0 2.73e-09      51.961524
+  Include shear deformations.
+  Neglect geometric stiffness.
+
+L O A D   C A S E   1   O F   1  ... 
+
+   Gravity X =  0.0    Gravity Y =  0.0    Gravity Z =  0.0 
+   0 concentrated loads
+   0 uniformly distributed loads
+   0 trapezoidally distributed loads
+   0 concentrated point loads
+   0 temperature loads
+   0 prescribed displacements
+
+E L A S T I C   S T I F F N E S S   A N A L Y S I S   via  L D L'  decomposition
+
+
+L O A D   C A S E   1   O F   1  ... 
+
+N O D E   D I S P L A C E M E N T S  					(global)
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+F R A M E   E L E M E N T   E N D   F O R C E S				(local)
+  Elmnt  Node       Nx          Vy         Vz        Txx        Myy        Mzz
+     1      1      0.0         0.0        0.0        0.0        0.0        0.0  
+     1      2      0.0         0.0        0.0        0.0        0.0        0.0  
+     2      2      0.0         0.0        0.0        0.0        0.0        0.0  
+     2      3      0.0         0.0        0.0        0.0        0.0        0.0  
+     3      3      0.0         0.0        0.0        0.0        0.0        0.0  
+     3      4      0.0         0.0        0.0        0.0        0.0        0.0  
+     4      4      0.0         0.0        0.0        0.0        0.0        0.0  
+     4      1      0.0         0.0        0.0        0.0        0.0        0.0  
+     5      5      0.0         0.0        0.0        0.0        0.0        0.0  
+     5      6      0.0         0.0        0.0        0.0        0.0        0.0  
+     6      6      0.0         0.0        0.0        0.0        0.0        0.0  
+     6      7      0.0         0.0        0.0        0.0        0.0        0.0  
+     7      7      0.0         0.0        0.0        0.0        0.0        0.0  
+     7      8      0.0         0.0        0.0        0.0        0.0        0.0  
+     8      8      0.0         0.0        0.0        0.0        0.0        0.0  
+     8      5      0.0         0.0        0.0        0.0        0.0        0.0  
+     9      9      0.0         0.0        0.0        0.0        0.0        0.0  
+     9     10      0.0         0.0        0.0        0.0        0.0        0.0  
+    10     10      0.0         0.0        0.0        0.0        0.0        0.0  
+    10     11      0.0         0.0        0.0        0.0        0.0        0.0  
+    11     11      0.0         0.0        0.0        0.0        0.0        0.0  
+    11     12      0.0         0.0        0.0        0.0        0.0        0.0  
+    12     12      0.0         0.0        0.0        0.0        0.0        0.0  
+    12      9      0.0         0.0        0.0        0.0        0.0        0.0  
+    13     13      0.0         0.0        0.0        0.0        0.0        0.0  
+    13     14      0.0         0.0        0.0        0.0        0.0        0.0  
+    14     14      0.0         0.0        0.0        0.0        0.0        0.0  
+    14     15      0.0         0.0        0.0        0.0        0.0        0.0  
+    15     15      0.0         0.0        0.0        0.0        0.0        0.0  
+    15     16      0.0         0.0        0.0        0.0        0.0        0.0  
+    16     16      0.0         0.0        0.0        0.0        0.0        0.0  
+    16     13      0.0         0.0        0.0        0.0        0.0        0.0  
+    17      1      0.0         0.0        0.0        0.0        0.0        0.0  
+    17      5      0.0         0.0        0.0        0.0        0.0        0.0  
+    18      2      0.0         0.0        0.0        0.0        0.0        0.0  
+    18      6      0.0         0.0        0.0        0.0        0.0        0.0  
+    19      3      0.0         0.0        0.0        0.0        0.0        0.0  
+    19      7      0.0         0.0        0.0        0.0        0.0        0.0  
+    20      4      0.0         0.0        0.0        0.0        0.0        0.0  
+    20      8      0.0         0.0        0.0        0.0        0.0        0.0  
+    21      9      0.0         0.0        0.0        0.0        0.0        0.0  
+    21     13      0.0         0.0        0.0        0.0        0.0        0.0  
+    22     10      0.0         0.0        0.0        0.0        0.0        0.0  
+    22     14      0.0         0.0        0.0        0.0        0.0        0.0  
+    23     11      0.0         0.0        0.0        0.0        0.0        0.0  
+    23     15      0.0         0.0        0.0        0.0        0.0        0.0  
+    24     12      0.0         0.0        0.0        0.0        0.0        0.0  
+    24     16      0.0         0.0        0.0        0.0        0.0        0.0  
+    25      1      0.0         0.0        0.0        0.0        0.0        0.0  
+    25      9      0.0         0.0        0.0        0.0        0.0        0.0  
+    26      2      0.0         0.0        0.0        0.0        0.0        0.0  
+    26     10      0.0         0.0        0.0        0.0        0.0        0.0  
+    27      3      0.0         0.0        0.0        0.0        0.0        0.0  
+    27     11      0.0         0.0        0.0        0.0        0.0        0.0  
+    28      4      0.0         0.0        0.0        0.0        0.0        0.0  
+    28     12      0.0         0.0        0.0        0.0        0.0        0.0  
+    29      5      0.0         0.0        0.0        0.0        0.0        0.0  
+    29     13      0.0         0.0        0.0        0.0        0.0        0.0  
+    30      6      0.0         0.0        0.0        0.0        0.0        0.0  
+    30     14      0.0         0.0        0.0        0.0        0.0        0.0  
+    31      7      0.0         0.0        0.0        0.0        0.0        0.0  
+    31     15      0.0         0.0        0.0        0.0        0.0        0.0  
+    32      8      0.0         0.0        0.0        0.0        0.0        0.0  
+    32     16      0.0         0.0        0.0        0.0        0.0        0.0  
+R E A C T I O N S							(global)
+  Node        Fx          Fy          Fz         Mxx         Myy         Mzz
+R M S    R E L A T I V E    E Q U I L I B R I U M    E R R O R: 1.000e+00
+
+M O D A L   A N A L Y S I S   R E S U L T S
+  Total Mass:  1.227324e-03     Structural Mass:  1.227324e-03 
+N O D A L   M A S S E S	(diagonal of the mass matrix)			(global)
+  Node  X-mass      Y-mass      Z-mass      X-inrta     Y-inrta     Z-inrta
+     1 6.39236e-05 6.39236e-05 6.39236e-05 4.21003e-02 4.21003e-02 4.21003e-02
+     2 6.39236e-05 6.39236e-05 6.39236e-05 4.21003e-02 4.21003e-02 4.21003e-02
+     3 6.39236e-05 6.39236e-05 6.39236e-05 4.21003e-02 4.21003e-02 4.21003e-02
+     4 6.39236e-05 6.39236e-05 6.39236e-05 4.21003e-02 4.21003e-02 4.21003e-02
+     5 6.39236e-05 6.39236e-05 6.39236e-05 4.21003e-02 4.21003e-02 4.21003e-02
+     6 6.39236e-05 6.39236e-05 6.39236e-05 4.21003e-02 4.21003e-02 4.21003e-02
+     7 6.39236e-05 6.39236e-05 6.39236e-05 4.21003e-02 4.21003e-02 4.21003e-02
+     8 6.39236e-05 6.39236e-05 6.39236e-05 4.21003e-02 4.21003e-02 4.21003e-02
+     9 4.63096e-05 4.63096e-05 4.63096e-05 1.46981e-02 1.46981e-02 1.46981e-02
+    10 4.63096e-05 4.63096e-05 4.63096e-05 1.46981e-02 1.46981e-02 1.46981e-02
+    11 4.63096e-05 4.63096e-05 4.63096e-05 1.46981e-02 1.46981e-02 1.46981e-02
+    12 4.63096e-05 4.63096e-05 4.63096e-05 1.46981e-02 1.46981e-02 1.46981e-02
+    13 4.63096e-05 4.63096e-05 4.63096e-05 1.46981e-02 1.46981e-02 1.46981e-02
+    14 4.63096e-05 4.63096e-05 4.63096e-05 1.46981e-02 1.46981e-02 1.46981e-02
+    15 4.63096e-05 4.63096e-05 4.63096e-05 1.46981e-02 1.46981e-02 1.46981e-02
+    16 4.63096e-05 4.63096e-05 4.63096e-05 1.46981e-02 1.46981e-02 1.46981e-02
+  Use consistent mass matrix.
+N A T U R A L   F R E Q U E N C I E S   & 
+M A S S   N O R M A L I Z E D   M O D E   S H A P E S 
+ convergence tolerance: 1.000e-06 
+  MODE     1:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE     2:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE     3:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE     4:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE     5:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE     6:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE     7:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE     8:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE     9:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    10:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    11:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    12:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    13:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    14:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    15:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    16:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    17:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    18:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    19:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    20:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    21:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+  MODE    22:   f= -nan Hz,  T= -nan sec
+		X- modal participation factor =         -nan 
+		Y- modal participation factor =         -nan 
+		Z- modal participation factor =         -nan 
+  Node    X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot
+     1        -nan        -nan        -nan        -nan        -nan        -nan
+     2        -nan        -nan        -nan        -nan        -nan        -nan
+     3        -nan        -nan        -nan        -nan        -nan        -nan
+     4        -nan        -nan        -nan        -nan        -nan        -nan
+     5        -nan        -nan        -nan        -nan        -nan        -nan
+     6        -nan        -nan        -nan        -nan        -nan        -nan
+     7        -nan        -nan        -nan        -nan        -nan        -nan
+     8        -nan        -nan        -nan        -nan        -nan        -nan
+     9        -nan        -nan        -nan        -nan        -nan        -nan
+    10        -nan        -nan        -nan        -nan        -nan        -nan
+    11        -nan        -nan        -nan        -nan        -nan        -nan
+    12        -nan        -nan        -nan        -nan        -nan        -nan
+    13        -nan        -nan        -nan        -nan        -nan        -nan
+    14        -nan        -nan        -nan        -nan        -nan        -nan
+    15        -nan        -nan        -nan        -nan        -nan        -nan
+    16        -nan        -nan        -nan        -nan        -nan        -nan
+M A T R I X    I T E R A T I O N S: 3
+There are 0 modes below -nan Hz. ... All 22 modes were found.
+
