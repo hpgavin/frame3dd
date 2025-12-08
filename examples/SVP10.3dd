@@ -1,0 +1,139 @@
+STAAD-PRO Verification Problem 10 - Natural Modes of a Framework
+
+# node data ...
+18                                # number of nodes 
+#.node       x            y       z            r       units: inches
+
+ 1          0.0          0.0     0.0          0.0
+ 2        17.25          0.0     0.0          0.0
+ 3        17.25         27.25    0.0          0.0
+ 4         0.0          27.25    0.0          0.0
+
+ 5          0.0          0.0    10.0          0.0
+ 6        17.25          0.0    10.0          0.0
+ 7        17.25         27.25   10.0          0.0
+ 8         0.0          27.25   10.0          0.0
+
+ 9         0.0           0.0    18.625        0.0
+11        17.25          0.0    18.625        0.0
+14        17.25         27.25   18.625        0.0
+16         0.0          27.25   18.625        0.0
+
+10         8.625         0.0    18.625        0.0
+12        17.25          8.625  18.625        0.0
+13        17.25         18.625  18.625        0.0
+15         8.625         27.25  18.625        0.0
+17         0.0          18.625  18.625        0.0
+18         0.0           8.625  18.625        0.0
+
+
+ # reaction data ...
+ 4                                # number of nodes with reactions
+#.n     x y z xx yy zz                1=fixed, 0=free
+
+  1     1 1 1  1  1  1
+  2     1 1 1  1  1  1
+  3     1 1 1  1  1  1
+  4     1 1 1  1  1  1
+
+ # frame element data ...  A36 steel 
+18                                # number of frame elements
+#e  n1 n2  Ax       Asy      Asz      Jxx      Iyy      Izz       E     G      roll  density
+#. .  .    in^2     in^2     in^2     in^4     in^4     in^4      psi   psi     deg  lb/in^3/g
+
+ 1  1  5   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+ 2  5  9   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+ 3  2  6   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+ 4  6 11   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+ 5  3  7   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+ 6  7 14   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+ 7  4  8   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+ 8  8 16   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+ 9  9 10   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+10 10 11   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+11 11 12   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+12 12 13   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+13 13 14   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+14 14 15   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+15 15 16   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+16  9 18   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+17 18 17   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+18 17 16   1.074532 0.538985 0.538985 1.331494 0.665747 0.665747 27.9e6 10.731e6  0  1.00e-16
+ 
+ 1                # 1: include shear deformation
+ 0                # 1: include geometric stiffness
+50.0              # exaggerate mesh deformations
+ 1.0              # zoom scale for 3D plotting
+-1.0              # x-axis increment for internal forces
+                  # if dx is -1 then internal force calculations are skipped.
+
+1                 # number of static load cases
+
+                                # Begin Static Load Case 1 of 0
+                
+# gravitational acceleration for self-weight loading (global)
+#.gX                gY                gZ                
+#.in./s^2        in./s^2                in./s^2
+  0                  0                -386.4
+
+0                                # number of loaded nodes
+0                                # number of uniform loads
+0                                # number of trapezoidal loads
+0                                # number of internal concentrated loads
+0                                # number of temperature loads
+0                                # number of nodes with prescribed displacements
+                                # End   Static Load Case 1 of 1
+
+
+# dynamic analysis data ...
+
+ 24      # number of desired dynamic modes 
+
+ # if nM is set to 0 (zero) the remaining Input Data may be omitted
+
+ 1     # 1= Subspace-Jacobi iteration, 2= Stodola (matrix iteration) method
+ 0     # 0= consistent mass matrix, 1= lumped mass matrix
+ 1e-9  # frequency convergence tolerance  approx 1e-4
+ 0     # frequency shift-factor for rigid body modes, make 0 for pos.def. [K]
+ 1     # exaggerate modal mesh deformations
+
+
+ # extra node inertia data ...
+# 0      # number of nodes with extra node mass or rotatory inertia
+ 14      # number of nodes with extra node mass or rotatory inertia, set mass density = 1e-16
+##.node    mass        XX-inertia     YY-inertia      ZZ-inertia  (global coordinates)
+##         lb/386.4    lb.in^2/386.4  lb.in^2/386.4  lb.in^2/386.4  
+   5        8.833e-3    0.0            0.0            0.0
+   6        8.833e-3    0.0            0.0            0.0
+   7        8.833e-3    0.0            0.0            0.0
+   8        8.833e-3    0.0            0.0            0.0
+ 
+  12        8.833e-3    0.0            0.0            0.0
+  13        8.833e-3    0.0            0.0            0.0
+  17        8.833e-3    0.0            0.0            0.0
+  18        8.833e-3    0.0            0.0            0.0
+ 
+  10        8.833e-3    0.0            0.0            0.0
+  15        8.833e-3    0.0            0.0            0.0
+  
+   9       25.355e-3    0.0            0.0            0.0
+  11       25.355e-3    0.0            0.0            0.0
+  14       25.355e-3    0.0            0.0            0.0
+  16       25.355e-3    0.0            0.0            0.0
+
+
+# extra frame element mass data ...
+ 0      # number of frame elements with extra mass 
+
+# mode shape animation data ...
+ 6                        # number of modes to be animated, nA 
+# list of modes to be animated, sorted in increasing order 
+ 1  2  3  4  5  6  
+  
+ 0.1                       # pan rate of the animation 0 = no panning
+
+# matrix condensation data ...
+
+ 0  # matrix condensation method ...  0=none, 1=static, 2=dynamic, 3=modal
+
+# End of input data file for stat-frame-13.3dd 

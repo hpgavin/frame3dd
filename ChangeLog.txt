@@ -1,0 +1,803 @@
+* Mon Dec 08 09:34:00 EDT 2025 Henri Gavin <hpgavin> 0.20240514+ 
+- initial github commit and making use of github repository HPGnumlib
+- remove Doxyfile
+- remove SConstruct
+- remove preframe
+- remove PACKAGING.txt
+- move eig.c to HPGnumlib/HPGeig.c
+- move eig.h to HPGnumlib/HPGeig.h
+
+* Sat May 11 08:10:00 EST 2019 Henri Gavin <hpgavin> 0.20140514+
+- NRutil.c - fix memory leaks in free_D3matrix and free_D3dmatrix
+
+* Sat Jun 30 14:06:00 EST 2018 Henri Gavin <hpgavin> 0.20140514+
+- fix typo in Frame3DD-manual.html ...  EMs to NMs ... etc
+
+* Wed Nov 25 14:06:00 EST 2015 Henri Gavin <hpgavin> 0.20140514+
+- changed Matlab interface function frame_3dd.m so that 
+floating point values in the .FMM file have aligned decimal points.
+
+* Sun Oct 31 15:15:00 EST 2015 Henri Gavin <hpgavin> 0.20140514+
+- add the peak element internal forces to the .CSV output data file
+- update Frame3DD-manual.html re. the inclusion of peak element internal
+forces in the .CSV output data file
+
+* Tue Oct 20 15:53:00 EST 2015 Henri Gavin <hpgavin> 0.20140514+
+- in testing for large average strains, check for large positive _and_
+negative strains 
+frame3dd.c line 450 changed ... 
+if ( fabs(axial_strain > 0.001 ) ) {
+... to ... 
+if ( fabs(axial_strain) > 0.001 ) {
+- new Exit Codes:
+181 : stiffness matrix not positive definite
+182 : large strain
+183 : stiffness matrix not positive definite _and_ large strains
+- Frame3DD-manual.html updated with new Exit Codes
+
+* Fri Jun  5 16:33:00 EST 2015 Henri Gavin <hpgavin> 0.20140514+
+- changed format of the .zip file distributions.  now all binary applications
+are in a single distribution .zip file.   
+- change installation instructions to comply with the new distribution file
+structure
+- change sourceforge location of download .zip archive to
+https://sourceforge.net/projects/frame3dd/files/
+- did not change the link used to the download .zip archive ... still ...
+http://sourceforge.net/project/platformdownload.php?group_id=221386
+... this link finds the latest .zip file in the archive.
+... not yet sure if the download stats are updating correctly.
+- small style formatting changes to user manual
+
+
+* Thu Jun  4 16:33:00 EST 2015 Henri Gavin <hpgavin> 0.20140514+
+- increase limit on number of animated modes from 20 to 100.
+- function name changes in main.c frame3dd_io.c frame3dd.c ...
+-- rename conden to static_condensation
+-- rename guyan to paz_condensation
+-- rename dynamic_conden to modal_condensation
+- associated updates to user manual
+- replace links with platformdownload in the user manual with links to list of
+download .zip files ... the platformdownload option at sourceforge appears to
+be no longer implemented.
+
+
+* Fri Dec  5 13:11:00 EST 2014 Henri Gavin <hpgavin> 0.20140514+
+- require "anlyz ~= 0" in order to run matrix condensation
+
+
+* Fri Nov  7 13:11:00 EST 2014 Henri Gavin <hpgavin> 0.20140514+
+- update Frame3DD-manual.html with instructions on how to zoom, pan, and shift
+3D images in gnuplot.
+- update saveplot and saveplot_w32 for gnuplot version 4.6
+
+
+* Sat May 17 07:00:00 EST 2014 Henri Gavin <hpgavin> 0.20140514
+- clear a few warnings when compiling with -Wall
+- add more precision to the description of the numerical method in the
+user-manual.html
+- rename user-manual.html to Frame3DD-manual.html
+- fix link in website/index.html
+- add Frame3DD-manual.html to sourceforge repository and distributions
+- add scale variable to Input Data File to scale 3D plots in gnuplot 4.6
+
+* Fri May 16 07:00:00 EST 2014 Henri Gavin <hpgavin> 0.20140514
+- Reaction forces reflect the presence of loads applied directly on reaction coordinates
+- Reactions are computed and updating for partitioned matrix systems
+within ldl_dcmp_pm and ldl_mprove_pm. computing reactions in this way
+is valid only for linear elastic analyses
+- function compute_reaction_forces() was re-introduced ... 
+The superposition of incremental reaction forces dR does not 
+work in problems with geometric stiffness, since
+the stiffness changes at each iteration.    
+So the reactions are re-computed only for problems with geometric stiffness.    
+- Compute RMS equilibrium error for linear elastic analyses
+- The RMS equilibrium error makes use of only the upper triangle of [K_qq]
+- RMS equilibrium values are assessed for linear elastic analyses
+
+* Thu May 15 07:00:00 EST 2014 Henri Gavin <hpgavin> 0.20140514
+- merge add_feF() into element_end_forces()
+
+* Wed May 14 07:00:00 EST 2014 Henri Gavin <hpgavin> 0.20140514
+- include the effect of applied point loads at reaction coordinates on the computed reaction forces
+This change has simplified the calculations by eliminating the need for 
+the entire function: compute_reaction_forces() and 
+the reaction-related calcluations in the function: add_feF().   
+Instead, the correct reaction forces are now computed within ldl_dcmp_pm.    
+The relevant changes to main.c, frame3dd.c, and HPGmatrix.c are 
+commented with the date of the change: 2014-05-14.
+Because this change affects computed results,
+the version number is updated to 20140514.
+Step 8 of section 8 of the user manual is updated to reflect
+this change in the method.
+- these changes do not affect the formatting of the input or output data
+- changed all gnuplot commands "set nofoobar" to "unset foobar"
+- caught and fixed bug affecting smoothness of mode-shape animations
+- updated links to ansicon and Sketchup interface in user-manual.html
+
+* Fri Jan 24 08:00:00 EST 2014 Henri Gavin <hpgavin> 0.20140121
+- update zipdist.sh for OSX versions "789"
+
+* Tue Jan 21 16:00:00 EST 2014 Henri Gavin <hpgavin> 0.20140121
+- correction in computation of internal element transverse displacements
+- apply linear correction to integrated (M/EI) *before* adding in V/GA
+- update version numbers to 20140121 in code and documentation
+
+* Mon Dec 30 15:58:18 EST 2013 Henri Gavin <hpgavin> 0.20130317
+- sign of reaction forces in .CSV output is negative of what it should be.
+- source-code and examples updated
+
+*Thu Dec 19 22:19:21 EST 2013 Henri Gavin <hpgavin> 0.20130317
+- add .csv versions of all examples to web site and to download collection
+- remove semicolon (;) from list of comment delimiters for "csv" compatability
+- add semicolon (;) to list of ignored characters for "csv" compatability
+
+*Tue Dec 17 22:19:21 EST 2013 Henri Gavin <hpgavin> 0.20130317
+- user_manual.html ... change .bash_profile to .profile
+
+*Mon Dec 16 22:19:21 EST 2013 Henri Gavin <hpgavin> 0.20130317
+- user_manual.html ... change .bashrc to .bash_profile
+- user_manual.html ... change .cshrc  to .login
+
+*Tue Jun 18 14:17:15 EDT 2013 Henri Gavin <hpgavin> 0.20130317
+- new function peak_internal_forces
+- write peak internal element forces to output data file
+
+*Mon Jun 17 11:47:25 EDT 2013 Henri Gavin <hpgavin> 0.20130317
+- add listing of maximum and minimum element forces, moments, and displacements to the internal force output data file
+- updated usr-manual.html with these changes
+
+*Wed Apr 17 14:27:47 EDT 2013 Henri Gavin <hpgavin> 0.20130317
+- bug blocking matrix condensation calculations found and fixed
+- more verbose run-time output to help find input data problems in condensation data
+- if the number of animated modes, omit the line with the list of modes to anmimate, nA, is set to 0 (zero).
+ 
+*Mon 20 Mar 2013 <john.pye@anu.edu.au> 0.20130317
+- Small edit to user-manual (John Pye email)
+
+*Mon 17 Mar 2013 <john.pye@anu.edu.au> 0.20130317
+- Update SCons build for renamed files eg HPGmatrix.c
+
+*Sat Mar 9 2013 Henri Gavin <.> 0.02100105
+- frame3dd_io.c - fix bug in writing undeformed mesh with data check only
+
+*Wed Mar 6 2013 Henri Gavin <.> 0.02100105
+- add error check on input data for unconnected nodes, with output error code 42
+
+*Wed Feb 20 2013 Henri Gavin <.> 0.02100105
+- sourceforge upgrade:
+- svn switch --relocate
+- ... https://frame3dd.svn.sourceforge.net/svnroot/frame3dd
+- ... https://svn.code.sf.net/p/frame3dd/code/
+
+*Wed Feb 20 2013 Henri Gavin <.> 0.02100105
+- frame3dd_io.c and user-manual.html - update gnuplot to version 4.6 
+
+*Mon Feb 11 2013 Henri Gavin <.> 0.02100105
+- frame3dd_io.c --- add comment in plot data files for element numbers
+
+*Sat Feb 8 2013 Henri Gavin <.> 0.02100105
+- frame3dd_io.c --- add variable for gnuplot line width
+
+*Tue Jan  22 2013 Henri Gavin <.> 0.02100105
+- NRutil.c --- change definition of save_ functions
+
+*Thu Dec  6 20:02:21 EST 2012 Henri Gavin <.> 0.02100105
+- frame3dd_io.c --- improve handling of input data when nM=0 is omitted.
+- frame3dd_io.c --- improve handling of missing flags in command line args
+
+*Mon Nov 26 22:35:36 EST 2012 Henri Gavin <.> 0.20100105
+- add fixed end forces to reaction forces in frame3dd.c function add_feF().
+- comment-out "set tickslevel 0" in frame3dd_io.c function animate() for
+compatibility with gnuplot versions earlier than 4.6
+
+*Wed Nov  7 2012 Henri Gavin <.> 0.20100105
+- fix broken links to ansicon ...  http://adoxa.3eeweb.com/ansicon/
+
+*Tue Nov  6 2012 Henri Gavin <.> 0.20100105
+- add reference to Wai-Fah Chen's text on Structural Stability in the section of user-manual.html on second-order analysis.
+
+*Fri Nov  2 2012 Henri Gavin <.> 0.20100105
+- small edits to comments in main.c
+
+*Tue Oct 30 2012 Henri Gavin <.> 0.20100105
+- Cleaned up and documented Newton-Raphson code.  
+- Improved documentation in the Numerical Details section.
+- Set internal force data to zero at start of each load case. 
+
+*Mon Oct 29 2012 Henri Gavin <.> 0.20100105
+- Improving documentation on numerical details.
+
+*Wed Oct 24 2012 Henri Gavin <.> 0.20100105
+- Investigated Powell-Symmetric-Broyden update of secant stiffness matrix. This quasi-Newton method does not seem to help very much.  In fact, in all tests convergence with the Powell-Symmetric-Broyden update is slower.  In some cases the solution does not converge.   So, Frame3DD is sticking with the standard full secant update method.   A function for Powell-Symmetric-Broyden updating is now in HPGmatrix.c, for possible future use.  
+
+*Fri Oct 19 2012 Henri Gavin <.> 0.20100105
+- Terms (1,1), (7,7), (1,7) and (7,1) of Kg should be zero!
+
+*Mon Oct 15 2012 Henri Gavin <.> 0.20100105
+- re-write of matrix-solving routines in HPGmatrix.c to solve partitioned
+systems of equations: ldl_dcmp_pm and ldl_mprv_pm.  
+- associated re-write of sections of main.c dealing with solving the
+equations.
+- associated edits of user-manual.doc
+- associated correction of the computation of reaction forces ...
+Frame3DD now passes the "patch" test.
+- rename matrix.c , matrix.h to HPGmatrix.c , HPGmatrix.h
+- rename hpgUtils.c , hpgUtils.h to HPGutil.c , HPGutil.h
+
+
+*Tue Oct  2 2012 Henri Gavin <.> 0.20100105
+- delete: matrix.c hpgUtils.c nrutil.c  (matrix.c and hpgUtls.c were GPL)
+- add:   HPGmatrix.c HPGutil.c NRutil.c (none of these are GPL)
+- new functions in HPGmatrix.c for solving partitioned systems of equations via LDL' decomposition.   These functions will be used in a forthcoming change in order to compute reaction forces directly from the equilibrium matrices.
+- this update is the first in a sequence of re-writes of Frame3DD.
+
+*Wed Sep  5 2012 Henri Gavin <.> 0.20100105
+- user-manual.html - add link to Google Sketchup interface for Frame3DD
+http://rhin.crai.archi.fr/rld/plugin_details.php?id=1008
+
+*Thu Jun  7 2012 Henri Gavin <.> 0.20100105
+- frame3dd_io.c :  set tickslevel 0 to bring orgin of z axis to x-y plane
+
+*Wed May 30 2012 Henri Gavin <.> 0.20100105
+- user-manual.html and README-win32.txt - windows installaion - add recommendation for ansicon.
+- fresh build of Frame3DD for linux, OS X, and Win32
+
+*Mon May 28 2012 Henri Gavin <.> 0.20100105
+- bug fix : allowable number of of interioir point forces, nP, is ten times the number of frame elements, nE. The input data error message was triggered if nP > nE. It has been changed to check if nP > 10*nE.   
+- updated : frame3dd_io.c  and  user-manual.html (Thanks to Humberto Hassey.)
+
+*Mon Apr 09 2012 Henri Gavin <.> 0.20100105
+- change of terminology: "joint" to "node" throughout documentation and code
+
+*Mon Apr 09 2012 Henri Gavin <.> 0.20100105
+- frame3dd_io.c ... fix spelling of "C O N C E N T R A T E D"
+
+*Fri Apr 06 2012 Henri Gavin <.> 0.20100105
+- frame3dd_io.c ... in function animate, prevent overflow from excessive EXG factor
+
+*Sun Jan 01 2012 Henri Gavin <.> 0.20100105
+- user-manual.html - add link to the vim charity, iccf-holland 
+
+*Sun Jan 01 2012 Henri Gavin <.> 0.20100105
+- source-code re-organization, moved matrix multiplication routines from eig.c to matrix.c
+
+*Thu Dec 30 2011 Henri Gavin <.> 0.20100105
+- source-code re-organization, new matrix.c, matrix.h contains lu_dcmp, ldl_dcmp, pseudo-inverse, and other matrix math functions 
+
+*Wed Dec 21 2011 Henri Gavin <.> 0.20100105
+- user-manual.html - Add acknowledgment section, small edit to 7.4.2 shear effects.  
+
+*Thu Nov 17 2011 Henri Gavin <.> 0.20100105
+- user-manual.html - gnuplot link for Win32 to the 4.2.6 version ... the 4.4.4 version seems to have trouble.    
+
+*Fri Nov 11 2011 Henri Gavin <.> 0.20100105
+- user-manual.html - improved installation instructions
+
+*Wed Nov 9 2011 Henri Gavin <.> 0.20100105
+- user-manual.html - update suggested text editors and links
+
+*Tue Nov 8 2011 Henri Gavin <.> 0.20100105
+- user-manual.html - simplification of installation instructions
+
+*Tue Nov 8 2011 Henri Gavin <.> 0.20100105
+- user-manual.html - slight simplification of Windows installation instructions
+
+*Thu Nov 3 2011 Henri Gavin <.> 0.20100105
+- user-manual.html - small wordsmith edits regarding experimental validation of shear correction factors.
+
+*Thu Nov 3 2011 Henri Gavin <.> 0.20100105
+- update user-manual.html, add Cowper's 1966 paper to the list of references for shear correction factors
+
+*Tue Nov 1 2011 Henri Gavin <.> 0.20100105
+- wordsmithing in user-manual.html regarding shear effects
+
+*Tue Nov 1 2011 Henri Gavin <.> 0.20100105
+- correction to user-manual.html regarding shear correction factor equations 
+
+*Mon Oct 31 2011 Henri Gavin <.> 0.20100105
+- update user-manual.html regarding shear correction factors and torsion
+constants
+
+*Sun Oct 30 2011 Henri Gavin <.> 0.20100105
+- update user-manual.html regarding shear correction factors
+
+*Sun Mar 27 2011 Henri Gavin <.> 0.20100105
+- add .CSV input data template from Simon Fendall
+
+*Mon Mar 7 2011 Henri Gavin <.> 0.20100105
+- modify computation of internal forces from interior-span point loads, now the shear force drop due to interior point loads occurs over a span of 2*dx.
+
+*Wed Feb 2 2011 Henri Gavin <.> 0.20100105
+-   re-commit after source-forge hack of Jan 28 2011.
+
+*Thu Dec 23 2010 Henri Gavin <.> 0.20100105
+- add caveat on maximum shear stress in user manual
+
+*Wed Dec 1 2010 Henri Gavin <.> 0.20100105
+- fixed bug related to linear analysis of temperature loads
+- added ascii (ANSI.SYS) color to screen output hpgUtils.c hpgUtils.h
+- The Win32 "Command Prompt" does not recognize ANSI.SYS escape sequences at
+all.
+- the .ZIP source code distribution now includes the examples
+- more efficient .ZIP archiving in .zipdist.sh
+
+*Fri Nov 26 2010 Henri Gavin <.> 0.20100105
+- updated user-manual.html with Gnuplot links to www.gnuplot.info
+and removed links to http://www.duke.edu/~hpgavin/gnuplot.html
+
+*Wed Nov 10 2010 Henri Gavin <.> 0.20100105
+- improve comments and documentation on the '-e' command line flag
+
+*Tue Nov  9 2010 Henri Gavin <.> 0.20100105
+- added program name, description, url and author to LICENSE.txt
+
+*Sat Oct 10 2010 Henri Gavin <.> 0.20100105
+- fix typo re: local section axes in section 7.6 of manual
+- set value of steel density in exA.3dd, exC.3dd, exD.3dd, and exG.3dd to 7.33e-7 k/in^3/g
+
+*Tue Sep  7 2010 Henri Gavin <.> 0.20100105
+- bug fix in call to lumped_M (switched beam mass BMs and roll angle p) 
+
+*Wed Aug 12 2010 Henri Gavin <.> 0.20100105
+- add wxWidgets link to TODO.txt
+
+*Tue Aug 10 2010 Henri Gavin <.> 0.20100105
+- add extra beam mass to element mass matrix prior to coordinate transformation
+- better checking of symmetry of consistent mass matrix
+- better checking of symmetry of geometric stiffness matrix
+- debug option writes all element mass and stiffness matrices to disk
+
+*Mon Aug 09 2010 Henri Gavin <.> 0.20100105
+- add plot formatting ... 'set size ratio -1'  for equal XY plot scaling
+- improve and simplify plot axis scaling for 3D animations
+- add "-z" command line option to force 3D plotting
+"-z" forces 3D plotting in Gnuplot
+- update documentation regarding -z flag
+- change .plt file comment "# M E S H   A N N O T A T I O N   F I L E\n" to
+"# G N U P L O T   S C R I P T   F I L E \n"
+- re-run examples and tune mesh exageration parameters
+
+*Tue May 18 2010 Henri Gavin <.> 0.20100105
+- remove email address from web-pages to cut down on spam
+
+*Wed Mar 10 2010 Henri Gavin <.> 0.20100105
+- improve documentaion on 3D coordinate transformations (manual section 7.3)
+
+*Tue Feb 09 2010 Henri Gavin <.> 0.20100105
+- bug fix. Internal forces and displacments in elements shorter than the
+x-axis increment were previously calculated only at x=L.
+Now these values are calcualted at both x=0 and x=L.  
+
+*Wed Jan 20 2010 Henri Gavin <.> 0.20100105
+- small grammar correction in user-manual.html
+
+*Sat Jan 16 2010 Henri Gavin <.> 0.20100105
+- create a set of exit codes with an exit code index in user-manual
+- standardize usage of stderr prior to exit calls and stdout for "verbose"
+- update user-manual.html with exit codes
+- fix bug in path name parsing in frame3dd_io.c : 658 function output_path() 
+In windows absolute path starts with "C:\" .. not "\" or "/"
+In Unix and OS X the absolute path starts with "/"
+
+*Thu Jan 14 2010 Henri Gavin <.> 0.20100105
+- improve grammar in template.3dd
+- update user-manual.html to specify the maximum number of load cases is 30 
+
+*Mon Jan 11 2010 Henri Gavin <.> 0.20100105
+- improve parsing data format for internal element forces and displacements
+- separate deformed mesh and undeformed mesh data files
+- shorten loops for writing mesh data files
+- stream-line writing of gnuplot scripts ...
+sections of duplicated code are combined and 
+mode shapes for 3D frames are no longer plotted in 2D before being plotted in 3D
+- update user-manual.html
+- plotting of internal forces in Gnuplot is the next step (?)
+
+*Fri Jan 8 2010 Henri Gavin <.> 0.20100105
+- add function force_bent_beam to frame3dd_io.c to compute deformed mesh
+shapes from static loads using statics and mechanics equations instead of a
+simple cubic interpolation between joint displacements and rotations.
+This function parses the output data file containing internal forces and
+transverse displacements.  This function may be easily extended to plot
+diagrams of internal axial force, shear force, torsion moment and bending
+moment.   
+- modification to formatting of internal force data file to make parsing a
+little easier
+- bug fix in internal frame element displacements (add coord. transformation)
+- update user-manual.html
+
+*Thu Jan 7 2010 Henri Gavin <.> 0.20100105
+- add torsion and axial displacement to frame element internal displacements
+
+*Wed Jan 6 2010 Henri Gavin <.> 0.20100105
+- if dx == -1 then skip the calculation of internal forces and transverse
+displacements.  
+- update examples/*.3dd data files with new dx variable and re-run all examples
+- update matlab interface matlab/frame_3dd.m
+- update user-manual.html
+
+*Tue Jan 5 2010 Henri Gavin <.> 0.20100105
+- fix error in equivalent load calculation for trapezoidally-distributed loads
+acting along the local x-axis.
+- add function "write_internal_forces" to frame3dd_io.c in order to compute
+and save the internal axial force, shear forces, torsion, bending moments,
+and transverse displacements for each frame element.
+- add varialbe dx for user-specified x-axis increment for the internal force
+calculations
+- update examples/*.3dd data files with new dx variable and re-run all examples
+- update exampes/test*.3dd data files with new input data format
+- update user-manual.html
+- issue release 20100105
+
+*Sun Jan 3 2010 Henri Gavin <.> 0.20091203
+- add matlab path instructions to the user manual
+
+*Fri Jan 1 2010 Henri Gavin <.> 0.20091203
+- update Matlab inteface program frame_3dd.m to work with recent enhancements
+to Frame3DD (density in frame element data and gravitational loading)
+
+*Mon Dec 21 2009 Henri Gavin <.> 0.20091203
+- replace link to LinuxTerminal.pdf link from user-manual.html with a link to
+http://www.ee.surrey.ac.uk/Teaching/Unix/unix1.html
+
+*Wed Dec 16 2009 Henri Gavin <.> 0.20091203
+- Add a newline character "\n" to the beginning of warning and error messages  
+- Small edits to user-manual.html
+- Rename dist-zip.sh to zipdist.sh
+
+*Tue Dec 15 2009 Henri Gavin <.> 0.20091203
+- Add doc/img/Sketchup-Frame1.jpg and doc/img/Sketchup-Trailer1.jpg
+- Add doc/img/exp_ansys_gavin.png
+
+*Tue Dec 8 2009 Henri Gavin <.> 0.20091203
+- Remove TextWrangler suggestion from user manual
+- User Manual instructions on opening .profile using TextEdit
+- add "-x" flag to suppress writing of 't' or 'c' characters in the Ouput Data
+- Change line terminator to CR/LF 
+
+* Sun Dec 6 2009 Henri Gavin <.> 0.20091203
+- add example/selfweight.3dd to validate gravity load analysis
+
+* Fri Dec 4 2009 Henri Gavin <.> 0.20091203
+- increase allocated memory for file name strings 'modefl', 'meshfl', 'framefl'
+from 64 to 128 ... Full path file names to local temp directories can be quite
+long in Windows.  
+- use sprintf to concatenate path name to file names
+- my_itoa() is no longer used
+- fix date-stamp bug in the ".plt" file
+
+* Thu Dec 3 2009 Henri Gavin <.> 0.20091203
+- release version 20091203 
+- add gravity loading to Frame3DD
+new variables gX gY gZ for gravitational acceleration in the global X Y and Z
+directions, add density data to frame element data section, remove density 
+data from mass data, new variable nX for extra beam mass, simplified data
+entry for extra beam mass.
+- user manual updated
+- template.3dd updated
+- examples updated and checked
+
+* Wed Dec 2 2009 Henri Gavin <.> 0.20091022
+- fix bug in creating mesh_file and mode_file the first char was being clipped
+- change exagg to exagg_static ... specifically for exaggerating static meshes
+- add new variable exagg_modal ... specifically for exaggerating modal  meshes
+The new variable "exagg_modal" is specified right after the "shift" variable
+in the Input Data file.    The command-line option -e applies only to the
+static mesh exaggeration, not the dynamic mesh exaggeration.
+- Update user-manual.html and the examples/ex*.3dd to reflect the change
+- Re-run example files
+
+* Tue Dec 1 2009 Henri Gavin <.> 0.20091022
+- Provide more information from "help" request ... frame3dd -h
+- Add -w flag to frame_3dd.m so that the stiffness matrix is written
+- Replace ``smart quotes'' from LICENSE.txt with "regular quotes."
+- chmod -w LICENSE.txt
+
+* Tue Nov 24 2009 Henri Gavin <.> 0.20091022
+- Change Duke Univ URL in source code comments to frame3dd.sourceforge.net
+- Added a simple Makefile to   trunk/src/  directory
+- Changed FrameDD to Frame3DD on website/index.html
+- Change trunk/LICENSE.txt to GPL v3 license.
+
+* Mon Nov 23 2009 Henri Gavin <.> 0.20091022
+- Fix broken links to Mackerle and Pilkey references in the user manual.
+
+* Wed Nov 18 2009 Henri Gavin <.> 0.20091022
+- Add Stress Check information to the user manual in section 7.13.  
+
+* Tue Nov 17 2009 Henri Gavin <.> 0.20091022
+- Increase precision for numerical solution for geometric nonlinear problems.
+- Add code to check for out-of-balance forces in the equilibrium() function.
+
+* Thu Nov  5 2009 Henri Gavin <.> 0.20091022
+- Small polishing edits to the format of the Output Data file.  
+
+* Wed Nov  4 2009 Henri Gavin <.> 0.20091022
+- Move ... #define FILENMAX 96 ... from main.c to common.h because a number of
+c++ objects require FILENMAX too
+- Added WITH_GLOBALS define check for compiling Frame3DD into a GUI
+- These changes suggested by Andrew Kovalev during GUI development for Frame3DD
+
+* Thu Oct 29 2009 Henri Gavin <.> 0.20091022
+- Increase limit on the number of trapezoidally distributed load from
+one per frame element to ten per frame element
+- Fixed Frame3DD example files in the doc directory and renamed them to 
+frame3dd-ex1.3dd and frame3dd-ex2.3dd
+- Changed comment chararacter from % to # in examples for syntax highlighting
+- user-manual refinement
+
+* Tue Oct 27 2009 Henri Gavin <.> 0.20091022
+
+- There appear to be conflicting definitions for the %TEMP% environment
+variable in Windows.   The environment variable %TEMP% is defined differently
+to an executable program than it is to a user.   To an executable program
+%TEMP% is C:\WINDOWS\Temp and to a user %TEMP% is
+%HOMEPATH%\Local Settings\Temp (at least in XP, it's something else in Vista).  
+Until Microsoft resolves this discrepancy, the user-manual will recommend
+setting the FRAME3DD_OUTDIR environment variable to a value referenced to
+%HOMEPATH%, such as %HOMEPATH%\Desktop\Frame3DD\temp, rather than a value
+referenced to %TEMP%, such as %TEMP%\frame3dd_temp
+- The .ZIP installation now includes the directory Frame3DD\temp for the
+reason described above.  
+- If a user specifies a path for Output Data files, the file name is extracted
+from the path to create the path for writing mesh and mode shape files.
+For example, running
+   frame3dd  examples/exB.3dd  examples/abc.out
+would have resulted in an attempt to open /tmp/examples/abc-msh.001   In cases
+in which the directory /tmp/examples/ does not exist, this would have resulted
+in an error.   Now, running
+   frame3dd  examples/exB.3dd  examples/abc.out
+results in the successful opening of mesh and mode data files such as
+/tmp/abc-msh.001 and /tmp/abc-m-01
+- The (secret) -d "debug" flag is now operational.  It had been broken.
+- In frame3dd_io.c change 
+#ifdef WIN32   to    #if defined(WIN32) || defined(DJGPP)
+- Change location of  frame3dd.3dd  from  "TEMP"  to  "FRAME3DD_OUTDIR"
+- When run by clicking the frame3dd.exe (in Windows) the Command Prompt window
+remains open until the user hits 'Enter'
+- Updates to user-manual.html 
+
+* Mon Oct 26 2009 Henri Gavin <.> 0.20091022
+- Check return values of fscanf functions and report errors to user for input data debugging purposes. 
+- Change nB variable to nE throughout, including user manual.
+- Add instructions for modeling pre-stressed structures in user-manual.
+
+* Thu Oct 22 2009 Henri Gavin <.> 0.20091022
+- Updated and improved .ZIP installation instructions. 
+
+* Wed Oct 21 2009 Henri Gavin <.> 0.20091021
+- Adding .ZIP packaging for Linux, Windows, and OSX
+- Adding installation instructions to user-manual.html for new .zip packaging
+- Adding packaging shell scripts for binary and source .zip packaging
+- The previous .bz2 source packaging and .exe Windows installer are still
+intact
+
+* Tue Oct 20 2009 John Pye <john.pye@anu.edu.au> 0.20091020
+- Adding packaging for Debian, planning new release.
+
+* Mon Oct 19 2009 Henri Gavin <.> 0.20091019
+- User manual correction to Jxx formulae for square tube and rectangular tube sections.
+- Reorganization of the descriptions of section properties and coordinate
+transformation in the user manual.
+
+* Sun Oct 18 2009 Henri Gavin <.> 0.20091018
+- Expanded description of section properties and "roll angle" in the
+user manual.
+
+* Tue Sep 22 2009 Henri Gavin <.> 0.20090922
+- Added flag option '-a' to display "about" information. 
+- This option should be helpful to those running Frame3DD in the background,
+and wishing to acknowledge Frame3DD in the "about" information of their 
+software.  
+- Added flag '-w' to enable writing of mass and stiffness matrices.
+- Updates suggested by Barry Sanford 
+- Updated user-manual.html accordingly.
+
+* Thu Sep 17 2009 Henri Gavin <.> 0.20090917
+- A warning is displayed to the screen indicating the level of average axial strain in an element whenever this strain exceeds 0.001 (0.1%) in magnitude.   Most structural materials yield at strain levels between 0.08% and 0.15%.  
+- Loads in examples that are over-stressed were reduced.   
+- Example files re-run.
+- Update the user-manual.html reflecting these changes.
+
+* Wed Sep 09 2009 Henri Gavin <.> 0.20090909
+- Minor edit to user-manual.html 
+
+* Tue Sep 08 2009 Henri Gavin <.> 0.20090908
+- Update user-manual.html with notes on end force sign convention
+
+* Wed Jun 24 2009 John Pye <john.pye@anu.edu.au> 0.20090624
+- SoQT detection for SCons script.
+- Fix error with runtime location of 'properties.txt' script.
+- Fix error with arc2iv when file unable to be located.
+
+* Wed Jun 10 2009 Henri Gavin <.> 0.20090515
+- Small website tweaks ... font sizes, tabular layout,
+- Trying to promote frame3dd.sourceforge.net in Google searches for '3d Frame'
+
+* Wed Jun 3 2009 Henri Gavin <.> 0.20090515
+- Changed all .frm file extensions to .3dd file extensions
+- Registered frame3dd (.3dd) file extensions on filext.com
+
+* Fri May 15 2009 Henri Gavin <.> 0.20090515
+- Fixed bug in post-processor for deformed beam shapes. This bug fix occurs in lines 2668 - 2694 (function bent_beam) in frame3dd_io.c
+- Re-ran example with May 15 2009 build
+
+* Fri Apr 17 2009 Henri Gavin <.> 0.20090417
+- Re-ran examples with April 17 2009 build
+ 
+* Fri Apr 17 2009 John Pye <john.pye@anu.edu.au> 0.20090417
+- Removed LinuxCommand PDF link in documentation.
+- Removed little cmd prompt icons from documentation.
+- New release on SF.net before new work on data structures commences.
+- Reformatted changelog to PC format (may cause probs with RPM?)
+- Removed wordy usage output from changelog (doesn't fit RPM formatting requirements).
+
+* Tue Mar 31 2009 Henri Gavin <.> 0.20090331
+- Fixed bug in the Matlab interface function frame_3dd.m ... no long printing the depricated anlyz variable value
+- Frame3DD now writes the stiffness matrix to a file named "Ks" for each analysis. Line 460 of main.c ... after Newton-Raphson iterations for geometric nonlinear analysis, if such an analysis is to be performed. ...for compatability with Matlab interface function frame_3dd.m
+- re-ran example files
+
+* Thu Mar 5 2009 Henri Gavin <.> 0.20090305 
+- Remove "anlyz" from input data file format because the "-c" command line option is now an easier and better way to specify "data check only". Updated code, examples and documentation.
+- Fixed bug related to "-q" flag and verbose output on line 1274 of frame3dd_io.c
+- Added checks related to incorrect command-line arguments.
+- Added an evaluation/interpretation of RMS relative equilibrium precision within the code and updated the documentation.
+
+* Wed Mar 4 2009 Henri Gavin <.> 0.20090304 
+- Fixed fprintf format character in save_ivector()
+- Re-ran examples
+
+* Wed Mar 4 2009 Henri Gavin <.> 0.20090304 
+- Fixed bug in multi-load case nonlinear analysis in main.c line 410. ... Iteration termination criteria must be reset at the start of each iteration.
+- Change snprintf to sprintf in frame3dd_io.c for DJGPP compatability
+- Added #include <time.h> in nrutil.c for DJGPP compatability
+
+* Wed Mar 4 2009 Henri Gavin <.> 0.20090304 
+- Added matrix condensation option to the command line
+- Improved command line interface (now "frame3dd infile outfile" is ok)
+- Improved user-manual.html regarding command-line options with examples
+- Command-line help is (trimmed)
+
+* Wed Mar 4 2009 Henri Gavin <.> 0.20090304
+- Implement command line parsing using the getopt function
+. ... using getopt for ease of portability.
+- Added functions to frame3dd_io.c:
+.   parse_options() --- calls getopt
+.   display_help() 
+.   display_usage()
+.   display_version()
+- Updated documentation with command-line syntax ... doc/user-manual.html
+
+* Tue Mar 3 2009 Henri Gavin <.> 0.20090303
+- Implement command line parsing using argtable2 package
+
+* Mon Mar 2 2009 Henri Gavin <.> 0.20090302
+- Usage change from "frame3dd InputData.frm" to "frame3dd InputData.frm OutputData.out"
+- output information regarding number of loading types is now more clear
+- updated examples B and E with trapezoidal loads
+- updated documentation and README
+- updated Matlab frame_3dd.m
+
+* Thu Feb 27 2009 Henri Gavin <.> 0.20090227
+- Implement trapezoidally-distributed loads over partial distances along frame elements
+
+* Tue Feb 10 2009 Henri Gavin <.> 0.20090210
+- Input and Output are now in separate files.  The Output filename is automatically generated from the Input file.  The Output file recapitualtes the input data before writing the output data.   
+- Removed plot file, mesh file, and mode file names from input data file These file names are now automatically generated.  The path to these file names is also automatically generated according to the OS (Win32 or Linux/Unix/OSX etc). 
+- Removed file names for the plot file, mesh file, and mode file from the examples. 
+- Changed output_file_location to output_path
+- Moved calls to output_path (for the /tmp or "TEMP" path) from main.c to frame3dd_io.c
+- Changed  tpath to temppath
+- Changed frame3dd.cln file name to frame3dd.frm ... clean file name
+- All instances of a double quote character are ignored in reading input files
+- Updated documentation.
+
+* Mon Feb 09 2009 John Pye <john.pye@anu.edu.au> 0.20090209
+- Added support for FRAME3DD_OUTDIR as location of output files
+- Updated documentation
+- Added datestamp to documentation (a bit kludgey)
+- More comments on use of temp directory and output files.
+- Changed example files to remove absolute /tmp paths.
+- Changelog converted to separate file.
+- Added missing documentation images to Windows installer.
+
+* Mon Feb 02 2009 John Pye <john.pye@anu.edu.au> 0.20090202
+- Fixed problem with use of /tmp on Windows
+- Upload binaries to SF.net
+- Add comments to README-win32.txt
+
+* Thu Jan 29 2009 Henri Gavin <.> 0.20090129
+- Completed migration of website to frame3dd.sourceforge.net
+
+* Sun Jan 4 2009 Henri Gavin <.> 0.20090104
+- Input data order reorganized: joints, reactions, members, loads
+- Updated TODO.txt, website, examples, and documentation. 
+
+* Thu Jan 1 2009 Henri Gavin <.> 0.20090101
+- Implemented .CSV spreadsheet support
+- Eliminated some unneccessary vectors  "_lc"
+- Updated TODO.txt, website, examples, and documentation. 
+
+* Wed Dec 31 2008 Henri Gavin <.> 0.20081231
+- Moved rel_norm() from ldl_dcmp.c to frame3dd.c
+- User input variables are now float instead of double
+... except for joint location variable (xyz) which is still type vec3
+
+* Tue Dec 30 2008 Henri Gavin <.> 0.20081230
+- The Input Data file format changed in two ways as follows:
+> Reaction data are listed just after the Member data.
+> Prescribed displacements are listed separately for each load case.
+- Added comments to src/*.h files
+- Changed "nM" variable name to "nB" ... number of beam elements
+- Changed "modes" variable name to "nM" ... number of dynamic modes
+- Changed "pos" variable name to "xyz" ... joint locations
+- Removed many #include "abc.h" lines from .c source files
+without affecting the ability to execute or to compile warning-free via  ... 
+gcc -O -Wall -o frame3dd main.c frame3dd.c frame3dd_io.c ldl_dcmp.c lu_dcmp.c coordtrans.c eig.c nrutil.c -lm
+- Updated TODO.txt, website, examples, and documentation.
+
+* Fri Dec 12 2008 Henri Gavin <.> 0.20081212
+- The file frame3dd.cln is now written to /tmp/
+
+* Thu Dec 11 2008 Henri Gavin <.> 0.20081211
+- Fixed bugs in writing Matlab m-file output.
+- Documentation updated.
+- The name of the outout m-file will not conflict with other file names.
+- Renamed itoa function to my_itoa for portability reasons.
+
+* Mon Dec 08 2008 Henri Gavin <.> 0.20081208
+- An error message is now displayed if nL < 1
+- Updated documentation.
+
+* Mon Dec 01 2008 Henri Gavin <.> 0.20081201
+- Removed the redefine of float to double, now all floating point
+variables are defined as doubles.
+In a future version variables that can actually be floats, such
+as variables read from input data files, will be re-defined as floats.
+- Support for vec3 is retained througout.
+- Renamed frm_io.c to frame3dd_io.c
+- Renamed frm_io.h to frame3dd_io.h
+- Updated Sconscript with these file name changes
+- Changed getline_no_comment in frame3dd_io.c to support
+data files with comma-delimited values , with anticipated support
+for .CSV files
+
+* Mon Oct 13 2008 John Pye <john@curioussymbols.com> 20081013
+- Incorporated Henri's recent changes back into SF.net repository
+- Changed URLs to http://frame3dd.sf.net (which currently redirects to
+Henri's personal homepage, but proposed to move to SF.net in future)
+- Merged support for 'vec3' type in FRAME3DD, first step towards refactoring
+to some simpler API definitions.
+
+* Tue Sep  9 2008 Henri Gavin <.> 20080909
+- Added multiple load case capability
+- Updated web site http://www.duke.edu/~hpgavin/frame/
+with revised examples and revised instructions for the multiple load case capability
+
+* Mon Mar 17 2008 John Pye <john@curioussymbols.com>
+- Renamed to 'frame3dd' inline with new SF.net project name.
+
+* Fri Mar 14 2008 Henri Gavin <.> 20080314
+- Changed name of project from FRAME to FRAME3DD
+- Modified content of project web site ...
+http://www.duke.edu/~hpgavin/frame/
+and doc/user-manual.html to reflect change in name. The URL has not changed.
+- Updated source files to reflect name change 
+- Renamed src/frame.h to src/frame3dd.h
+- Renamed src/frame.c to src/frame3dd.c
+- Renamed frame.h to frame3dd.h
+- Renamed frame.spec to frame3dd.spec
+- Changed License from GPL version 2 to GPL version 3
+- Changed license text on FRAME source code to GPL version 3
+- Updated source files to reflect license change 
+- Created Sourceforge project under the name FRAME3DD
+- Files in src/viewer and src/microstran left unchanged.
+
+* Mon Jan 15 2008 John Pye <john@curioussymbols.com> 20071220
+- Updated to new version received from H Gavin by email.
+
+* Wed Jun 28 2007 John Pye <john@curioussymbols.com> 20070301
+- Start of Frame3DD SourceForge project
+
+* Fri Jan 01 1993 Henri Gavin <.> 19930101
+- initiation of program at the University of Michigan

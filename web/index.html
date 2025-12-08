@@ -1,0 +1,260 @@
+<html>
+<head>
+
+<title>Frame3DD - Static and Dynamic Structural Analysis of 2D and 3D Frames</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="verify-v1" content="NwqBAU/+Ts/l7zftZp4pE0nTdOhDahrxS1gje+S3LXc=" />
+
+<META NAME="Description" CONTENT=" Free software for static and dynamic analysis of 3D moment-resisting elastic frames and trusses. Written in ANSI C.  Source code includes:  frame analysis with elastic and geometric stiffness, LDL' decomposition, LU decomposition, Newton-Raphson iteration, sub-space iteration, Stodola iteration, static condensation, Guyan reduction, dynamic condensation, Matlab support and spreadsheet support.  Graphical output and mode shape animation via Gnuplot.">
+
+<META NAME="Keywords" CONTENT="Structural Dynamics, Structural Analysis, Frame Analysis, Software, 3D Frame, 3D Truss, Geometric Stiffness, Geometric Stiffness Matrix, Modal Analysis, Structural Dynamics, LDL Decomposition, LU Decomposition, Sub-space Iteration, Subspace Iteration, Static Condensation, Guyan Reduction, Dynamic Condensation, Linux, Source Code, OS X, Microsoft,
+Macintosh, OS X, Spreadsheet, CSV">
+
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<meta name="copyright" value="1992-2014">
+
+<style>
+h1 {font: bold xx-large sans-serif}
+h2 {font: bold x-large sans-serif}
+li, td, p {font: normal medium sans-serif}
+div.dlbox {width: 30em; clear:both; border: solid 2pt black; background-color: #FFFFEE; padding:10px}
+div.dlbox p {margin-bottom:3px; margin-top:3px}
+div.thumbs a img {border:0}
+</style>
+
+<link href="http://sourceforge.net/export/rss2_projnews.php?group_id=221386&rss_fulltext=1" type="application/rss+xml" rel="alternate" title="Frame3DD Project News" />
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000066" link="#0066cc" vlink="#000099" alink="#FF3333">
+
+<p><img src="img/psoe.jpg" align="left"  border="0">
+<b>
+<font face="Arial, Helvetica, sans-serif" size="3">
+<nobr> Frame3DD. Static and Dynamic Structural Analysis of 2D and 3D Frames. </nobr></b><br>
+</font>
+<font face="Arial, Helvetica, sans-serif" size="2">
+<a href="http://cee.duke.edu/">
+Department of Civil and Environmental Engineering</a><br>
+<a href="http://pratt.duke.edu/">
+Edmund T. Pratt School of Engineering</a><br>
+<a href="http://www.duke.edu/">
+Duke University</a> - Box 90287, 
+<a href="http://www.durham-nc.com/"> Durham</a>, 
+<a href="http://www.visitnc.com/"> NC</a> 27708-0287
+</font></p>
+
+<p><i><font face="Verdana, Arial, Helvetica, sans-serif" size="2">
+Henri P. Gavin, Ph.D., P.E., - Associate Professor - 
+</font></i></p>
+<hr>
+
+<h1>Frame3DD</h1>
+
+<!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
+<!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
+
+<div class=thumbs>
+<a href="img/buckle.png"><img src="img/buckle-small.png"></a>
+<a href="img/citicorp.png"><img src="img/citicorp-small.png"></a>
+<a href="img/frC.png"><img src="img/frC-small.png"></a>
+<a href="img/exJ.png"><img src="img/exJ-small.png"></a>
+<a href="img/frG.png"><img src="img/frG.png"></a>
+</div>
+
+<!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
+<!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
+
+<p><b>Frame3DD</b> is free open-source software for static and dynamic <b>structural analysis of 2D and 3D frames and trusses</b> with elastic and geometric stiffness.  
+It computes the static deflections, reactions, internal element forces, natural frequencies, mode shapes 
+and modal participation factors of two- and three- dimensional elastic structures using direct stiffness and mass assembly.  
+Frame3DD has its own text-file input format (.3dd), but additionally supports matlab (.m) and spreadsheet (.csv) file formats, and offers graphical output including mode shape animation via <a href="http://www.duke.edu/~hpgavin/gnuplot.html">Gnuplot</a> version 4.6.
+</p>
+
+<!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
+<!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
+
+<p>The program is written in plain ANSI C. The source code includes: frame analysis, LDL' decomposition, LU decomposition, Newton-Raphson iteration, sub-space iteration, Stodola iteration, Sturm eigenvalue check, static condensation, Guyan reduction, and dynamic condensation.</p>
+
+<!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
+<!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
+
+<p>Included in the program is a parser for <a href="#microstran">Microstran .ARC files</a>. Currently, we are able to load and view exported Microstran models, and we plan to incorporate ".ARC" as an alternative input format.</p>
+
+<!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
+<!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
+
+<p>Frame3DD is licensed under the GNU <a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/LICENSE.txt">General Public License</a>
+and is maintained at <a href="https://sourceforge.net/projects/frame3dd/">source-forge</a>.
+
+<!-- <a href="http://sourceforge.net/projects/frame3dd"><img src="img/sflogo-cropped.gif" border="0" alt="Get Frame3DD at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a> -->
+</p>
+
+
+<!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
+
+<a href="http://sourceforge.net/projects/frame3dd/">
+<img src="http://sflogo.sourceforge.net/sflogo.php?group_id=221386&amp;type=16" width="150" border="0" height="40" alt="Get Frame3DD at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a>
+<UL>
+
+<li>Download the <b><a href="http://sourceforge.net/project/platformdownload.php?group_id=221386"> documentation, examples, and the binary program for your operating system</a></b>.
+
+<li>Download the <b><a href="http://sourceforge.net/projects/frame3dd/files/frame3dd/">documentation, examples, and the source code</a></b>.
+
+<li>Browse the <b><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/doc/Frame3DD-manual.html">documentation</a></b> online.
+
+
+<!-- 
+(Note: source-forge ViewVC is
+<a href = "http://sourceforge.net/blog/update-on-the-sourceforgenet-attack/">
+currently down</a> - Feb. 2, 2011.)
+-->
+
+<li>Browse the <b><a href="https://sourceforge.net/p/frame3dd/code/">source code</a></b> online.
+
+<!-- 
+(Note: source-forge ViewVC is
+<a href = "http://sourceforge.net/blog/update-on-the-sourceforgenet-attack/">
+currently down</a> - Feb. 2, 2011.)
+-->
+
+<li>Read the <b><a href="http://sourceforge.net/news/?group_id=221386">project news</a></b>.<a href="http://sourceforge.net/export/rss2_projnews.php?group_id=221386&rss_fulltext=1"><img border=0 src="img/feed.png"/></a>
+
+<li>View the <b><a href="https://sourceforge.net/projects/frame3dd/files/stats/timeline">download stats</a></b>.
+
+</UL>
+
+<a name="examples"><h2>Examples</h2>
+<p>The following input data files are included with the Frame3DD download packages.  Click below to see formatted and commented input data, the associated output data,
+as well as plot and movie outputs generated using the program.</p>
+
+<table width="850" border="1" cellspacing="2" cellpadding="2" >
+<tr><td> <b>Example</b> </td><td>Input Data (.txt)</td><td>Output Data (.txt)</td><td>Input Data (.csv)</td><td>Output Data (.csv)</td><td>Plot</td><td>Movie</td></tr>
+<tr><td> (A) 2-D Pratt Truss </td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exA.3dd">exA.3dd</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exA.out">exA.out</a></td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exA.csv">exA.csv</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exA_out.CSV">exA_out.CSV</a></td>
+<td><a href="img/exA.jpg">Plot</a></td><td></td></tr>
+<tr><td> (B) Pyramid Frame </td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exB.3dd">exB.3dd</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exB.out">exB.out</a></td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exB.csv">exB.csv</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exB_out.CSV">exB_out.CSV</a></td>
+<td><a href="img/exB.jpg">Plot</a><br></td><td><a href="img/frB.mpeg">Movie</a></td></tr>
+<tr><td> (C) Tetrahedral Frame </td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exC.3dd">exC.3dd</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exC.out">exC.out</a></td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exC.csv">exC.csv</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exC_out.CSV">exC_out.csv</a></td>
+<td><a href="img/frC.jpg">Plot</a><br></td> <td><a href="img/frC.mpeg">Movie</a></td></tr>
+<tr><td> (D) Un-Restrained Frame </td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exD.3dd">exD.3dd</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exD.out">exD.out</a></td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exD.csv">exD.csv</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exD_out.CSV">exD_out.CSV</a></td>
+<td><a href="img/frD.jpg">Plot</a><br></td><td><a href="img/frD.mpeg">Movie</a></td></tr>
+<tr><td> (E) Lateral-Torsional Coupling </td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exE.3dd">exE.3dd</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exE.out">exE.out</a></td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exE.csv">exE.csv</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exE_out.CSV">exE_out.CSV</a></td>
+<td><a href="img/frE.jpg">Plot</a><br></td><td><a href="img/frE.mpeg">Movie</a></td></tr>
+<tr><td> (F) Building with Seismic Isolation </td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exF.3dd">exF.3dd</a><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exF.out">exF.out</a></td></td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exF.csv">exF.csv</a><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exF_out.CSV">exF_out.CSV</a></td></td>
+<td><a href="img/frF.jpg">Plot</a><br></td><td><a href="img/frF.mpeg">Movie</a></td></tr>
+<tr><td> (G) Building with Set-Back</td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exG.3dd">exG.3dd</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exG.out">exG.out</a></td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exG.csv">exG.csv</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exG_out.CSV">exG_out.CSV</a></td>
+<td><a href="img/frG.jpg">Plot</a><br></td><td><a href="img/frG.mpeg">Movie</a></td></tr>
+<tr><td> (H) Pedestrian Ramp Lateral Sway</td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exH.3dd">exH.3dd</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exH.out">exH.out</a></td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exH.csv">exH.csv</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exH_out.CSV">exH_out.CSV</a></td>
+<td><a href="img/frH.jpg">Plot</a><br></td><td><a href="img/frH.mpeg">Movie</a></td></tr>
+<tr><td> (I) Triangular Tower</td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exI.3dd">exI.3dd</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exI.out">exI.out</a></td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exI.csv">exI.csv</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exI_out.CSV">exI_out.CSV</a></td>
+<td><a href="img/exI.jpg">Plot</a><br></td><td> </td></tr>
+<tr><td> (J) Tesseract</td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exJ.3dd">exJ.3dd</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exJ.out">exJ.out</a></td>
+<td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exJ.csv">exJ.csv</a></td><td><a href="http://svn.code.sourceforge.net/p/frame3dd/code/trunk/examples/exJ_out.CSV">exJ_out.CSV</a></td>
+<td><a href="img/exJ.jpg">Plot</a><br></td><td> </td></tr>
+</table>
+</p>
+
+<a name="microstran"/><h2>Microstran Viewer</h2>
+<table width="800" cellpadding="10">
+<tr><td>
+<div class="thumbs">
+<a href="img/microstran.png"><img src="img/microstran-small.png"></a>
+</div>
+</td>
+<td>
+
+<p>As a first step to implementing basic interoperability between Frame3DD and other structural analysis programs, we have implemented a parser and viewer that reads <a href="http://www.microstran.com.au/">Microstran</a> ".ARC" files and displays them in 3D. This has already proven to be a useful tool, even without structural analysis capabilities. We propose next to implement support for converting between Frame3DD input files and Microstran .ARC files. This will allow Frame3DD results to be visualised using OpenGL graphics, as well as allowing us to validate Frame3DD in comparison with commercial tools that support this file format.</p>
+</td></tr></table>
+
+<h2>Related Links</h2>
+
+<ul>
+<li>Index of <a href="http://www.structural-engineering.fsnet.co.uk/free.htm">free structural analysis software</a>
+<li><a href="http://opensees.berkeley.edu/">OpenSees</a>: Open System for Earthquake Engineering Simulation
+<li>Matlab Central page about <a href="http://www.mathworks.com/matlabcentral/fileexchange/loadFile.do?objectId=6552&objectType=FILE">Matlab Finite Element Analysis software</a>
+<li><a href="http://www.duke.edu/~hpgavin/index.html">Henri Gavin</a>'s homepage
+<li><a href="http://jpye.dyndns.org/">John Pye</a>'s homepage
+</ul>
+
+<h2>License</h2>
+
+<font size="1">
+<a href="http://www.fsf.org/copyleft/gpl.html"><img align=left src="img/gplv3-127x51.png" border="0" style="margin:10px"></a>
+<p>
+<b>Frame3DD</b> is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License
+(<a href="http://www.fsf.org/copyleft/gpl.html">GPL</a>)
+as published by the 
+<a href="http://www.fsf.org/">Free Software Foundation</a>,
+either version 3 of the License, or (at your option) any later version.
+</p>
+
+<p>
+Simply put, the <a href="http://www.fsf.org/copyleft/gpl.html">GPL</a>
+says that anyone who redistributes the software, with or without changes, must pass along the freedom to further copy and change it. By distributing the complete source code for Frame3DD under the terms of the GPL, we guarantee that you and all other users will have the freedom to redistribute and change Frame3DD.
+</p>
+
+<p align="justify">
+<b>Frame3DD</b> is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License
+(<a href="http://www.fsf.org/copyleft/gpl.html">GPL</a>)
+and the GNU General Public License
+<a href="http://www.gnu.org/copyleft/gpl-faq.html">FAQ</a> for more details.
+</p>
+
+<p align="justify">
+&copy; 1992-2014 Henri P. Gavin. 
+Verbatim copying and distribution is permitted in any medium, provided this notice is preserved. <br><br>
+Department of Civil and Environmental Engineering<br>
+Duke University, Box 90287<br>
+Durham, NC 27708-0287 <br><br>
+</p>
+</font>
+
+<hr>
+<a href="http://sourceforge.net/projects/frame3dd/"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=221386&amp;type=16" align="left" border="0" width="150" height="40" style="margin:10px" alt="Get Frame3DD at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a>
+<p>
+<br>
+<!-- Automatically updated "last-modified" date -->
+<font face="Arial, Helvetica, sans-serif" size="2">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+m = "Last updated " + document.lastModified;
+document.write(m);
+// -->
+</SCRIPT> 
+</font>
+<a href="http://www.tinycounter.com" target="_blank" title="web site hit
+counter"><img border="0" alt="web site hit counter"
+src="http://mycounter.tinycounter.com/index.php?user=henrigavin"></a>
+</p>
+
+</body>
+</html>
+
+<!-- 
+RSYNC_RSH=ssh rsync --delete --progress -Cvaz * hpgavin,frame3dd@web.sourceforge.net:/home/groups/f/fr/frame3dd/htdocs/
+-->

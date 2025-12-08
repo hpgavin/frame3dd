@@ -1,0 +1,128 @@
+MICROSTRAN .ARC FILE FORMAT
+---------------------------
+
+This file documents the syntax of Microstran .arc files, which describe the
+geometry and mechanical properties of structural space frames. These files can
+be exported from Microstran, Multiframe and SpaceGASS structural analysis 
+programs, which are popular in Australia and perhaps other places too.
+
+As some sort of common interchange format, it made sense to write a parser for
+these files so that they could (one day) be read and analysed by the free open
+source program 'FRAME', of which the code in this directory is a part.
+
+It is a working document. You may be able to glean further information by 
+reading the code in the file 'modelparser.c' also in this directory.
+
+== NODE statement ==
+
+Nodes are specified by their location plus a bunch of flags.
+
+	  + node ID (used in MEMB statments)
+      |        + X
+      |        |         + Y
+      |        |         |           + Z
+      |        |         |           |      + flags
+      v        v         v           v      v
+NODE  6340     4.6742    -4.6738     7.2825 000000
+
+It's not clear yet what the purpose of the different flag bits might be. They
+appear to be 0-1 values (no 2,4,8 that we've seen).
+
+== MEMB statement ==
+
+Members are specified in the MEMB statement, which looks like this:
+
+      + member ID
+      |      + from node ID
+      |      |     + to node ID
+      |      |     |      + alignment to +Z axis
+      |      |     |      |     + corresponding section PROPerties
+      |      |     |      |     |      + corresponding MATeriaL properties
+      |      |     |      |     |      |    + a mysterious array of flags
+      |      |     |      |     |      |    |
+      v      v     v      v     v      v    v
+MEMB  6025   643   637    Z     63     6    000000 000000
+
+or
+
+                          + node to which the member section is aligned
+                          |
+MEMB   805    42    49  2048     4     1    000000 000000
+
+The 4th data field is the member alignment, which tells you which way the
+member's principle axis is oriented; it can be to an axis of the global
+coordinate system (first format) or to another (third) node in the structure
+(second format).
+
+It's not clear yet what the purpose of the MEMB flag bits might be, although
+it may correspond to the degrees of freedom at either end of the member. They
+appear to be 0-1 values (no 2,4,8 that we've seen).
+
+== PROP statement ==
+
+Microstran has a section library, and sections are referred to by name, eg
+'114.3X3.6CHS'. The .arc file format embeds some information about the section
+to allow calculations without going back to the section library, namely
+the cross sectional area, torsional modulus and second moments of area about
+the two principle axes. There are two extra fields which have both been 0.000 
+in the models I have seen so far.
+
+Code:
+ PROP     7 LIBR asw       114.3X3.6CHS    Y
+      1.2500E-03  0.000      0.000     3.8400E-06 1.9200E-06 1.9200E-06
+
+Interpretation:
+ PROP propid source asw?   NAME            ???
+       A_g         Ay?      Az?     J          I_yy          I_xx
+
+Here,
+	A_g    gross section area
+	J      torsional modulus ('St. Venant Torsion Constant')
+	Ay     shear area in y direction
+	Ax     shear area in x direction
+	I_yy   effective second moment of area from bending about y axis
+	I_xx   effective second moment of area for bending about x axis
+
+These terms follow the conventions used in the OneSteel section properties
+data. Note the difference in the 'x' and 'z' axis conventions used by
+Microstran!
+
+	
+There is some support for custom sections also in place. Here is an example
+of what that looks like:
+
+ PROP     1 PRIS LH80603010x1.5  Lipped Hat G350
+        2.9180E-04   0.000       0.000       0.000      2.8270E-07  4.0540E-07
+
+In this case the 'Y' from the above (perhaps that is the member orientation?)
+is replaced by a name for the section. The same properties appear to be
+given on the following line.
+
+We can see which of the 'I' is which using this output:
+
+ PROP    43 LIBR asw       250UB37.3       Y default
+       4.7500E-03  0.000      0.000     1.5800E-07 5.6600E-06 5.5700E-05
+
+The values of 5.66 and 5.57, corresponding to I_yy and I_xx respectively, can 
+be checked against the onesteel datasheet at:
+http://onesteel.com/images/db_images/productspecs/sectpropub1203.pdf
+
+== MATL statement ==
+
+This statement gives the material properties for the sections. For example,
+
+ MATL    1 2.000E+08 2.500E-01 7.850E+00 1.170E-05
+         ^   ^       ^         ^         ^
+         |   |       |         |         + beta? (not sure about this one)
+         |   |       |         + rho, material density
+         |   |       + sigma_y, yeild stress
+		 |   + young's modulus
+         + MATL ID code (used in MEMB statements)
+
+
+
+-- 
+John Pye
+21 Feb 2008
+http://pye.dyndns.org/
+

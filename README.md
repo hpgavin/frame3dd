@@ -1,10 +1,6 @@
 # FRAME3DD:
 
-
-
-**Static and Dynamic Structural Analysis of 2D and 3D Frames. **
-
-
+**Static and Dynamic Structural Analysis of 2D and 3D Frames.**
 
 ---
 
@@ -32,8 +28,9 @@ git clone http://www.github.com/hpgavin/frame3dd
 
 ---
 
-[Frame3DD homepage](web/index.html)
-[Frame3DD manual](web/index.html)
+* [Frame3DD homepage](web/index.html)
+
+* [Frame3DD manual](web/index.html)
 
 ---
 
