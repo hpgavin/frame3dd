@@ -30,7 +30,7 @@ div.thumbs a img {border:0}
 
 <body bgcolor="#FFFFFF" text="#000066" link="#0066cc" vlink="#000099" alink="#FF3333">
 
-<p><img src="http://hpgavin.github.io/frame3dd/web/img/psoeBlueCrop.png" align="left"  border="0">
+<p><img src="http://hpgavin.github.io/frame3dd/web/img/psoeBlueCrop.png" align="left"  width="110" border="0">
 <b>
 <font face="Arial, Helvetica, sans-serif" size="5">
 <nobr> Frame3DD. Static and Dynamic Structural Analysis of 2D and 3D Frames. </nobr></b><br>
@@ -70,7 +70,7 @@ Henri P. Gavin, Ph.D., P.E.
 <p><b>Frame3DD</b> is free open-source software for static and dynamic <b>structural analysis of 2D and 3D frames and trusses</b> with elastic and geometric stiffness.  
 It computes the static deflections, reactions, internal element forces, natural frequencies, mode shapes 
 and modal participation factors of two- and three- dimensional elastic structures using direct stiffness and mass assembly.  
-Frame3DD has its own text-file input format (.3dd), but additionally supports matlab (.m) and spreadsheet (.csv) file formats, and offers graphical output including mode shape animation via <a href="http://www.duke.edu/~hpgavin/gnuplot.html">Gnuplot</a> version 4.6.
+Frame3DD has its own text-file input format (.3dd), but additionally supports matlab (.m) and spreadsheet (.csv) file formats, and offers graphical output including mode shape animation via <a href="http://gnuplot.info/">Gnuplot</a> version 4.6.
 </p>
 
 <!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
@@ -147,8 +147,7 @@ as well as plot and movie outputs generated using the program.</p>
 <table width="800" cellpadding="10">
 <tr><td>
 <div class="thumbs">
-<a href="http://hpgavin.github.io/frame3dd/web/img/microstran.png"><img src="http://hpgavin.github.io/frame3dd/web/img/microstran-small.png"></a>
-</div>
+<a href="http://hpgavin.github.io/frame3dd/web/img/microstran.png"><img src="http://hpgavin.github.io//frame3dd/web/img/microstran-small.png"></a> </div>
 </td>
 <td>
 
