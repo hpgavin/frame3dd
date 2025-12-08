@@ -28,7 +28,7 @@ iframe {background-color: #000000; margin-top: 5px; margin-bottom: 5px, border:0
 
 <img src="img/psoe.jpg" height="100" align="left" border="0">
 <font face="Arial, Helvetica, sans-serif" size="4">
-<nobr><b>User manual and reference for <a href="http://frame3dd.sourceforge.net/">Frame3DD: A Structural Frame Analysis Program</a></b>
+<nobr><b>User manual and reference for <a href="https://hpgavin.github.io/frame3dd/">Frame3DD: A 3D Structural Frame Analysis Program</a></b>
 </nobr><br></font>
 <a href="http://cee.duke.edu/">
 Department of Civil and Environmental Engineering</a><br>
@@ -163,10 +163,9 @@ via <a href="http://www.gnuplot.info/">gnuplot</a> version 4.6.
 <ol>
 <li>Read the User Manual and Reference (this file).
 <li>
-<!-- a href="https://sourceforge.net/projects/frame3dd/files/"-->
-<!-- a href="https://sourceforge.net/projects/frame3dd/files/latest/download?source=files" -->
 <a href="http://sourceforge.net/project/platformdownload.php?group_id=221386" -->
-Download</a>
+Downloads from Sourceforge</a>
+<a href="https://github.com/hpgavin/frame3dd/graphs/traffic" -->Downloads from GitHub</a>
 Frame3DD and save the Frame3DD folder to your Desktop (more details below).
 <li>Optionally, obtain a copy of gnuplot for your operating system (more details below).
 <li>Open a terminal window, go to the Frame3DD directory, and run the program on one of the examples using a command like ...
@@ -191,7 +190,7 @@ Continue to hit the Return (or Enter) key until the last plot is displayed.
 <p>
 The <b>Input Data file</b> is a plain text file and must adhere to the format
 <a href="#InputData">described below</a>.
-Several examples are given at <a href="http://frame3dd.sourceforge.net/">http://frame3dd.sourceforge.net/</a>. When writing your own Input Data files, note the following points:</p>
+Several examples are given at <a href="https://github.com/hpgavin/frame3dd/">https://github.com/hpgavin/frame3dd/</a>. When writing your own Input Data files, note the following points:</p>
 
 <ul>
 <li>Comments may be placed anywhere in the file and are helpful in organizing the Input Data.
@@ -261,11 +260,10 @@ The additional output files will then appear in the folder you have specified.
 <a name="installrun"/><h2>3. How to install and run Frame3DD</h2>
 
 <p>
-Compiled executable programs are updated with some regularity.  
-Frame3DD installation packages are available for download for Linux,
-for OS X, and for Windows operating systems as a .ZIP archive.
-This installation .ZIP archive include:
+<b>to install:</b>   git clone http://github.com/hpgavin/frame3dd
+
 <ul>
+The repository includes ...
 <li> A copy of the GPL license (LICENSE.txt)
 <li> Executable programs (frame3dd) for Linux, OS X, and Windows
 <li> This manual, (doc/user-manual.html) 
@@ -274,12 +272,8 @@ This installation .ZIP archive include:
 <li> The Matlab interface code (matlab/)
 <li> A summary of recent updates to the program (ChangeLog.txt)
 <li> A set of example Input Data files (examples/)
-<li> The complete source code (src/)
+<li> The source code (src/) and a Makefile 
 </ul>
-</p>
-
-<p>
-A separate Windows installer includes a Microstran viewer module for Frame3DD.
 </p>
    
 <p>
@@ -288,34 +282,18 @@ The date stamp at the beginning of the manual corresponds to the release date of
 
 <a name="runlinux"/><h3>3.1 Linux</h3>
 
-<p>
-You may install Frame3DD from the .ZIP archive 
-or you may compile Frame3DD from the source code.
-The following instructions install Frame3DD to the <b>Desktop</b> but other directories may be substituted, if so desired.  
-</p>
-
 <h4>3.1.1 Installing Frame3DD from the .ZIP archive for Linux</h4>
 
-<ol>
-<li>
-<!-- a href="https://sourceforge.net/projects/frame3dd/files/"-->
-<!-- a href="https://sourceforge.net/projects/frame3dd/files/latest/download?source=files" -->
-<a href="http://sourceforge.net/project/platformdownload.php?group_id=221386">
-Download</a>
-the Frame3DD .ZIP archive (Frame3DD_VERSION.zip) and save it in your <b>Desktop</b>.<br>
-If the .ZIP archive was not automatically unzipped, 
-double-click the icon to extract it to your <b>Desktop</b>. 
 <li>
 <b><i>Recommended</i></b><br>
 Put the <b>Frame3DD</b> directory in your path and set the <b>FRAME3DD_OUTDIR</b> location.<br>
 To do this, double-click the <b>Home</b> icon on the Desktop, and select <b>View > Show Hidden Files</b><br><br>
 
 <ul>
-<li>If you have a file called <b>~/.profile</b> in your home directory,
-open it with a double-click.
-Copy-and-paste the following ten lines into the beginning of <b>~/.profile</b> 
+<li>If you have a file called <b>~/.profile</b> or <b>~/.zprofile</b> in your home directory,
+copy-and-paste the following ten lines into the beginning of <b>~/.profile</b> or <b>~/.zprofile</b>
 <pre>
-# for Frame3DD ... http://frame3dd.sourceforge.net/
+# for Frame3DD ... http://github.com/hpgavin/frame3dd/
 # add Frame3DD executable directory to the path
 export PATH=$PATH:$HOME/Desktop/Frame3DD/linux/ 
 # create a Frame3DD output directory
@@ -328,11 +306,12 @@ export FRAME3DD_OUTDIR=/tmp/frame3dd_temp_$USER
 </pre>
 ... save, and exit the editor.   
 
+<!-- 
 <li>If you have a file named <b>~/.login</b> in your home directory,
 open it with a double-click. 
 Copy-and-paste the following ten lines into the beginning of <b>~/.login</b> 
 <pre>
-# for Frame3DD ... http://frame3dd.sourceforge.net/
+# for Frame3DD ... http://github.com/hpgavin/frame3dd/
 # add Frame3DD executable directory to the path
 set path = ( $path $home/Desktop/Frame3DD/linux )
 # create a Frame3DD output directory
@@ -344,11 +323,11 @@ endif
 setenv FRAME3DD_OUTDIR /tmp/frame3dd_temp_$user
 </pre>
 ... save, and exit the editor.   <br>.
+-->
 
 <li> Open a Terminal window. (Right-click on an open part of the Desktop and select <b>Open Terminal</b>), and type:  
 <pre>
 source ~/.profile   # if you edited ~/.profile 
-source ~/.login     # if you edited ~/.login  
 </pre>
 </ul>
 </ol>
@@ -441,10 +420,6 @@ Or hit <b>CTRL-C</b> to stop the plots at the current plot.
 <h4>3.1.4 Compiling Frame3DD from source for Unix or Linux</h4>
 
 <p>
-<!--
-For Linux and Unix we currently only provide source-code tarball; you must
-build the software yourself.
--->
 The following instructions work on Ubuntu 8.10 - 14.04
 and should work with minor changes on any other recent Linux or Unix system.
 There are two options for compiling under Linux:
@@ -457,11 +432,12 @@ There are two options for compiling under Linux:
 (Right-click on an open part of the Desktop and select <b>Open Terminal</b>.) 
 and compile the code
 <pre>
-cd ~/Desktop/Frame3DD/src/
+cd ~/Desktop/frame3dd/src/
 make
 mv frame3dd ../linux/
 </pre>
 </ol>
+<!-- 
 <li> Compiling using SCONS: 
 <ol>
 <li>Ensure you have Python, SCons and GCC installed on your system. 
@@ -474,11 +450,11 @@ sudo apt-get install build-essential scons
 <pre>
 sudo apt-get install libsoqt-dev4
 </pre>
-<!--
+
 <a href="http://sourceforge.net/project/platformdownload.php?group_id=221386">Download</a>
 Download</a> the Frame3DD source-code tarball (frame3dd-VERSION.tar.bz2)
 and save it in your home directory.
--->
+
 
 <li>Open a Terminal, unpack the source code, enter the source directory,
 and build the code, as follows:
@@ -504,6 +480,7 @@ export PATH=$PATH:~/frame3dd-VERSION/build
 </pre>
 </ol>
 </ol>
+-->
 
 <a name="runosx"/><h3>3.2 Mac OS X</h3>
 
@@ -513,11 +490,13 @@ for some time and may give you problems. You may have more success trying to bui
 from source following the instructions for Linux or Unix.</div>
 -->
 
+<!-- 
 <p>
 For OS X running on an Intel processor, you may install Frame3DD from the .ZIP archive 
 or you may compile from the source code.
 The following instructions install Frame3DD to the <b>Desktop</b> but other directories may be substituted, if so desired.  
 </p>
+-->
   
 <h4> 3.2.1 Installing Frame3DD from the .ZIP archive for OS X</h4>
 
@@ -525,7 +504,7 @@ The following instructions install Frame3DD to the <b>Desktop</b> but other dire
 <li>
 <!-- a href="https://sourceforge.net/projects/frame3dd/files/" -->
 <!-- a href="https://sourceforge.net/projects/frame3dd/files/latest/download?source=files" -->
-<a href="http://sourceforge.net/project/platformdownload.php?group_id=221386">
+<a href="https://github.com/hpgavin/frame3dd/"> frame3dd > build > osx 
 Download</a>
 the Frame3DD .ZIP archive (Frame3DD_VERSION.zip) and save it in your <b>Desktop</b>.<br>
 If the .ZIP archive was not automatically unzipped, 
@@ -545,7 +524,7 @@ open  -a  TextEdit  ~/.profile
 </pre>
 <li> Copy-and-paste the following ten lines into the beginning of your <b>~/.profile</b> file ...
 <pre>
-# for Frame3DD ... http://frame3dd.sourceforge.net/
+# for Frame3DD ... https://github.com/hpgavin/frame3dd/
 # add Frame3DD executable directory to the path
 export PATH=$PATH:$HOME/Desktop/Frame3DD/osx/
 # create a Frame3DD output directory
@@ -708,7 +687,7 @@ The following instructions install Frame3DD to the <b>Desktop</b> but other dire
 <h4> 3.3.1 Installing Frame3DD from the .ZIP archive for Windows</h4>
 
 <ol>
-<li> <a href="http://sourceforge.net/project/platformdownload.php?group_id=221386">
+<li> <a href="https://github.com/hpgavin/frame3dd/"> frame3dd > build > windows</a>
 Download</a> the Frame3DD .ZIP archive (Frame3DD_VERSION_win32.zip) and save it to your <b>Desktop</b>.<br>
 If the .ZIP archive was not automatically unzipped, 
 simply drag <b>Frame3DD</b> folder icon to your <b>Desktop</b>. 

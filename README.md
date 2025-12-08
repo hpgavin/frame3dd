@@ -31,7 +31,7 @@ git clone http://www.github.com/hpgavin/frame3dd
 
 * [Frame3DD homepage](https://hpgavin.github.io/frame3dd/index.html)
 
-* [Frame3DD manual](https://hpgavin.github.io/frame3dd/index.html)
+* [Frame3DD manual](https://hpgavin.github.io/frame3dd/web/Frame3DD-manual.html)
 
 ---
 
