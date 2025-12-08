@@ -60,85 +60,98 @@ Henri P. Gavin, Ph.D., P.E.
 <a href="http://hpgavin.github.io/frame3dd/web/img/buckle.png"><img src="http://hpgavin.github.io/frame3dd/web/img/buckle-small.png"></a>
 <a href="http://hpgavin.github.io/frame3dd/web/img/citicorp.png"><img src="http://hpgavin.github.io/frame3dd/web/img/citicorp-small.png"></a>
 <a href="http://hpgavin.github.io/frame3dd/web/img/frC.png"><img src="http://hpgavin.github.io/frame3dd/web/img/frC-small.png"></a>
-<a href="http://hpgavin.github.io/frame3dd/web/img/exJ.png"><img src="http://hpgavin.github.io/frame3dd/web/img/exJ-small.png"></a>
-<a href="http://hpgavin.github.io/frame3dd/web/img/frG.png"><img src="http://hpgavin.github.io/frame3dd/web/img/frG.png"></a>
+<a href="http://hpgavin.github.io/frame3dd/web/img/exJ.png"><img src="http://hpgavin.github.io/frame3dd/web/img/exJ-small.png" width="246" ></a>
+<a href="http://hpgavin.github.io/frame3dd/web/img/frG.png"><img src="http://hpgavin.github.io/frame3dd/web/img/frG.png" width="204"></a>
 </div>
 
 <!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
 <!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
 
-<p><b>Frame3DD</b> is free open-source software for static and dynamic <b>structural analysis of 2D and 3D frames and trusses</b> with elastic and geometric stiffness.  
+<p>
+<b>Frame3DD</b> is free open-source software for static and dynamic <b>structural analysis of 2D and 3D frames and trusses</b> with elastic and geometric stiffness.  
 It computes the static deflections, reactions, internal element forces, natural frequencies, mode shapes 
 and modal participation factors of two- and three- dimensional elastic structures using direct stiffness and mass assembly.  
-Frame3DD has its own text-file input format (.3dd), but additionally supports matlab (.m) and spreadsheet (.csv) file formats, and offers graphical output including mode shape animation via <a href="http://gnuplot.info/">Gnuplot</a> version 4.6.
+Frame3DD has its own text-file input format (.3dd), but additionally supports matlab (.m) and spreadsheet (.csv) file formats, and offers graphical output including mode shape animation via <a href="http://gnuplot.info/">Gnuplot</a>.  
 </p>
 
 <!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
 <!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
 
-<p>The program is written in plain ANSI C. The source code includes: frame analysis, LDL' decomposition, LU decomposition, Newton-Raphson iteration, sub-space iteration, Stodola iteration, Sturm eigenvalue check, static condensation, Guyan reduction, and dynamic condensation.</p>
+<p>
+The program is written in plain ANSI C. The source code includes: frame analysis, LDL' decomposition, LU decomposition, Newton-Raphson iteration, sub-space iteration, Stodola iteration, Sturm eigenvalue check, static condensation, Guyan reduction, and dynamic condensation.
+</p>
 
 <!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
 <!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
 
-<p>Included in the program is a parser for <a href="#microstran">Microstran .ARC files</a>. Currently, we are able to load and view exported Microstran models, and we plan to incorporate ".ARC" as an alternative input format.</p>
+<p>
+Included in the program is a parser for <a href="#microstran">Microstran .ARC files</a>. Currently, we are able to load and view exported Microstran models, and we plan to incorporate ".ARC" as an alternative input format.
+</p>
 
 <!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
 <!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
 
-<p>Frame3DD is licensed under the GNU <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">General Public License 3.0</a>
+<p>
+Frame3DD is licensed under the GNU <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">General Public License 3.0</a>
 and is maintained at <a href="https://github.com/hpgavin/frame3dd/">GitHub</a>.
-
 </p>
 
+<a name="manual"><h2>Manual</h2>
+
+<p>
+<a href= https://hpgavin.github.io/frame3dd/web/Frame3DD-manual.html>Frame3DD manual<a>
+</p>
 
 <!-- 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame , 3D Frame --> 
 
 <a name="examples"><h2>Examples</h2>
-<p>The following input data files are included with the Frame3DD download packages.  Click below to see formatted and commented input data, the associated output data,
-as well as plot and movie outputs generated using the program.</p>
 
-<table width="850" border="1" cellspacing="2" cellpadding="2" >
+<p>
+The following input data files are included in the Frame3DD repository. 
+Click below to see formatted and commented input data, the associated output data, as well as plot and movie outputs generated using the program.
+</p>
+
+<table width="950" border="1" cellspacing="2" cellpadding="2" >
 <tr><td> <b>Example</b> </td><td>Input Data (.txt)</td><td>Output Data (.txt)</td><td>Input Data (.csv)</td><td>Output Data (.csv)</td><td>Plot</td><td>Movie</td></tr>
 <tr><td> (A) 2-D Pratt Truss </td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exA.3dd">exA.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exA.out">exA.out</a></td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exA.csv">exA.csv</a></td><td><a href="http://hpgavin.github.io/hpgavin/frame3dd/examples/exA_out.CSV">exA_out.CSV</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exA.3dd">exA.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exA.out">exA.out</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exA.csv">exA.csv</a></td><td><a href="http://hpgavin.github.io/hpgavin/frame3dd/blob/main/examples/exA_out.CSV">exA_out.CSV</a></td>
 <td><a href="http://hpgavin.github.io/frame3dd/web/img/exA.jpg">Plot</a></td><td></td></tr>
 <tr><td> (B) Pyramid Frame </td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exB.3dd">exB.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exB.out">exB.out</a></td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exB.csv">exB.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exB_out.CSV">exB_out.CSV</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exB.3dd">exB.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exB.out">exB.out</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exB.csv">exB.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exB_out.CSV">exB_out.CSV</a></td>
 <td><a href="http://hpgavin.github.io/frame3dd/web/img/exB.jpg">Plot</a><br></td><td><a href="http://hpgavin.github.io/frame3dd/web/img/frB.mpeg">Movie</a></td></tr>
 <tr><td> (C) Tetrahedral Frame </td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exC.3dd">exC.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exC.out">exC.out</a></td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exC.csv">exC.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exC_out.CSV">exC_out.csv</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exC.3dd">exC.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exC.out">exC.out</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exC.csv">exC.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exC_out.CSV">exC_out.csv</a></td>
 <td><a href="http://hpgavin.github.io/frame3dd/web/img/frC.jpg">Plot</a><br></td> <td><a href="http://hpgavin.github.io/frame3dd/web/img/frC.mpeg">Movie</a></td></tr>
 <tr><td> (D) Un-Restrained Frame </td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exD.3dd">exD.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exD.out">exD.out</a></td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exD.csv">exD.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exD_out.CSV">exD_out.CSV</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exD.3dd">exD.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exD.out">exD.out</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exD.csv">exD.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exD_out.CSV">exD_out.CSV</a></td>
 <td><a href="http://hpgavin.github.io/frame3dd/web/img/frD.jpg">Plot</a><br></td><td><a href="http://hpgavin.github.io/frame3dd/web/img/frD.mpeg">Movie</a></td></tr>
 <tr><td> (E) Lateral-Torsional Coupling </td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exE.3dd">exE.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exE.out">exE.out</a></td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exE.csv">exE.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exE_out.CSV">exE_out.CSV</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exE.3dd">exE.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exE.out">exE.out</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exE.csv">exE.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exE_out.CSV">exE_out.CSV</a></td>
 <td><a href="http://hpgavin.github.io/frame3dd/web/img/frE.jpg">Plot</a><br></td><td><a href="http://hpgavin.github.io/frame3dd/web/img/frE.mpeg">Movie</a></td></tr>
 <tr><td> (F) Building with Seismic Isolation </td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exF.3dd">exF.3dd</a><td><a href="http://github.com/hpgavin/frame3dd/examples/exF.out">exF.out</a></td></td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exF.csv">exF.csv</a><td><a href="http://github.com/hpgavin/frame3dd/examples/exF_out.CSV">exF_out.CSV</a></td></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exF.3dd">exF.3dd</a><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exF.out">exF.out</a></td></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exF.csv">exF.csv</a><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exF_out.CSV">exF_out.CSV</a></td></td>
 <td><a href="http://hpgavin.github.io/frame3dd/web/img/frF.jpg">Plot</a><br></td><td><a href="http://hpgavin.github.io/frame3dd/web/img/frF.mpeg">Movie</a></td></tr>
 <tr><td> (G) Building with Set-Back</td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exG.3dd">exG.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exG.out">exG.out</a></td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exG.csv">exG.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exG_out.CSV">exG_out.CSV</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exG.3dd">exG.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exG.out">exG.out</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exG.csv">exG.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exG_out.CSV">exG_out.CSV</a></td>
 <td><a href="http://hpgavin.github.io/frame3dd/web/img/frG.jpg">Plot</a><br></td><td><a href="http://hpgavin.github.io/frame3dd/web/img/frG.mpeg">Movie</a></td></tr>
 <tr><td> (H) Pedestrian Ramp Lateral Sway</td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exH.3dd">exH.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exH.out">exH.out</a></td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exH.csv">exH.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exH_out.CSV">exH_out.CSV</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exH.3dd">exH.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exH.out">exH.out</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exH.csv">exH.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exH_out.CSV">exH_out.CSV</a></td>
 <td><a href="http://hpgavin.github.io/frame3dd/web/img/frH.jpg">Plot</a><br></td><td><a href="http:/hpgavin.github.io/frame3dd/web/img/frH.mpeg">Movie</a></td></tr>
 <tr><td> (I) Triangular Tower</td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exI.3dd">exI.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exI.out">exI.out</a></td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exI.csv">exI.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exI_out.CSV">exI_out.CSV</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exI.3dd">exI.3dd</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exI.out">exI.out</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exI.csv">exI.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exI_out.CSV">exI_out.CSV</a></td>
 <td><a href="http://hpgavin.github.io/frame3dd/web/img/exI.jpg">Plot</a><br></td><td> </td></tr>
 <tr><td> (J) Tesseract</td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exJ.3dd">exJ.3dd</a></td><td><a href="http://github.com/frame3dd/examples/exJ.out">exJ.out</a></td>
-<td><a href="http://github.com/hpgavin/frame3dd/examples/exJ.csv">exJ.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/examples/exJ_out.CSV">exJ_out.CSV</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exJ.3dd">exJ.3dd</a></td><td><a href="http://github.com/frame3dd/blob/main/examples/exJ.out">exJ.out</a></td>
+<td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exJ.csv">exJ.csv</a></td><td><a href="http://github.com/hpgavin/frame3dd/blob/main/examples/exJ_out.CSV">exJ_out.CSV</a></td>
 <td><a href="http://hpgavin.github.io/frame3dd/web/img/exJ.jpg">Plot</a><br></td><td> </td></tr>
 </table>
 </p>

@@ -1,6 +1,6 @@
 # FRAME3DD ANALYSIS RESULTS  http://frame3dd.sf.net/ VERSION 20140514+ 
 # Example D: dynamic properties of an un-restrained frame with a triangular section 
-# Thu Oct 20 16:43:20 2022
+# Mon Dec  8 15:44:07 2025
 # G N U P L O T   S C R I P T   F I L E 
 set autoscale
 unset border
