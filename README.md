@@ -4,7 +4,7 @@
 
 ---
 
-**FRAME3DD*** is a program for the static and dynamic structural analysis of two- and three-dimensional structural frames and trusses with elastic and geometric stiffness.
+**FRAME3DD** is a program for the static and dynamic structural analysis of two- and three-dimensional structural frames and trusses with elastic and geometric stiffness.
 
 **FRAME3DD** reads an Input Data file, containing joint coordinates, member geometry, material moduli, restrained joints, prescribed displacements, load information, and optionally, mass information if a modal analysis is to be carried out.
 
@@ -12,13 +12,14 @@
 
 For usage information, see the User Manual, included with both the source code and binary installer packages.
 
-Additional output files from FRAME3DD are directed by default to the temporary file folder (according to the %TEMP% env var on Windows, or /tmp on other platforms). You can specify an alternative location for output files by setting the environment variable FRAME3DD_OUTDIR.
+Additional output files from **FRAME3DD** are directed by default to the temporary file folder (according to the %TEMP% env var on Windows, or /tmp on other platforms). You can specify an alternative location for output files by setting the environment variable FRAME3DD_OUTDIR.
 
-Note that you require write permissions for the input file in order that FRAME3DD can append its calculation results to that file.
+Note that you require write permissions for the input file in order that **FRAME3DD** can append its calculation results to that file.
 
 ---
 
-FRAME3DD is free software; you may redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation. FRAME3DD is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (GPL) for details. 
+**FRAME3DD** is free software; you may redistribute it and/or modify it under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation.
+**FRAME3DD** is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License (GPL) for details. 
 
 ---
 
@@ -28,9 +29,9 @@ git clone http://www.github.com/hpgavin/frame3dd
 
 ---
 
-* [Frame3DD homepage](web/index.html)
+* [Frame3DD homepage](https://hpgavin.github.io/frame3dd/web/index.html)
 
-* [Frame3DD manual](web/index.html)
+* [Frame3DD manual](https://hpgavin.github.io/frame3dd/web/index.html)
 
 ---
 
