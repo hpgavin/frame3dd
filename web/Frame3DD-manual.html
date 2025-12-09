@@ -181,6 +181,7 @@ via <a href="http://www.gnuplot.info/">gnuplot</a> version 4.6.
 <li>
 <a href="https://github.com/hpgavin/frame3dd/">Clone from GitHub</a> <br> 
 <pre>
+cd ~/Desktop/Code
 git clone http://github.org/hpgavin/frame3dd 
 </pre>
 <a href="http://sourceforge.net/project/platformdownload.php?group_id=221386"> Downloads from Sourceforge</a> are no longer updated <br> 
@@ -276,8 +277,9 @@ The additional output files will then appear in the folder you have specified.
 <a name="installrun"/><h2>3. How to install and run Frame3DD</h2> </a>
 
 <p>
-Clone the GitHub repository. 
+Open a Terminal, navigate to your Code directory and clone the GitHub repository. 
 <pre>
+cd ~/Desktop/Code
 git clone http://github.com/hpgavin/frame3dd
 </pre>
 The repository includes ...
@@ -299,8 +301,7 @@ The date stamp at the beginning of the manual corresponds to the release date of
 
 <h3> 3.1 Setting the $PATH and FRAME3DD_OUTDIR Environment Variables </h3> 
 
-<ul>
-
+<ol>
 <li>
 Open a Terminal and edit your OS's profile
 <pre>
@@ -308,7 +309,7 @@ notepad $PROFILE       # Windows
 TextEdit ~/.zprofile   # macOS
 pico ~/.profile        # linux
 </pre>
-Copy-and-paste the OS-appropriate section of code below into the beginning of <b>~/.profile</b>(linux)  or <b>~/.zprofile</b>(macOS) or <b>$PROFILE</b>(Windows) 
+<li> Copy-and-paste the OS-appropriate section of code below into the beginning of <b>~/.profile</b>(linux)  or <b>~/.zprofile</b>(macOS) or <b>$PROFILE</b>(Windows) 
 <pre>
 # for Frame3DD ... http://github.com/hpgavin/frame3dd/
 # add Frame3DD executable directory to the path
@@ -337,13 +338,13 @@ export FRAME3DD_OUTDIR=/tmp/frame3dd_temp_$USER
 ... save, and exit the editor.   
 
 <li> 
-Then, execute  
+Activate the changes to your OS profile
 <pre>
 . $PROFILE           # Windows 
 source ~/.profile    # linux
 source ~/.zprofile   # macOS
 </pre>
-</ul>
+</ol>
 
 <h3> 3.2 Running Frame3DD in a Terminal </h3>
 
@@ -415,7 +416,7 @@ Or hit <b>CTRL-C</b> to stop the plots at the current plot.
 
 <h3> 3.4 Compiling Frame3DD from source </h3>
 
-<ul>
+<ol>
 <li> Install a C compliler for your OS
 <ul>
 <li> (macOS) Install <a href="https://developer.apple.com/xcode/">Xcode</a>
@@ -426,7 +427,8 @@ sudo apt install build-essential
 </pre>
 </ul>
 
-<li> Open a Terminal window, get the source code, compile, and install the code
+<li>
+Open a Terminal, navigate to your Code directory, clone the GitHub repositories, compile the code and install the program. 
 <pre>
 cd ~/Desktop/Code
 git clone https://github.com/hpgavin/frame3dd
@@ -435,7 +437,7 @@ cd ~/Desktop/Code/frame3dd/
 make
 make install 
 </pre>
-</ul>
+</ol>
 
 <!-- 
 <li> Compiling using SCONS: 
@@ -2353,13 +2355,8 @@ frame3dd -i InFile -o OutFile -lOff -e100 -p3.4 -z
 <p>The source code is written in ANSI C and is extensively commented. The source code includes functions for frame analysis, LDL' decomposition, LU decomposition, Newton-Raphson iteration, sub-space iteration, Stodola iteration, Sturm eigen-value check, static condensation, dynamic condensation, and modal condensation.</p>
 
 <pre>
-git clone https://github.com/hpgavin/frame3dd
-git clone https://github.com/hpgavin/HPGnumlib
-</pre>
-
-<pre>
     file name       description
-    -------------     -------------------------------
+    -------------   -------------------------------
     main.c          main driver routines
     frame3dd.c      frame analysis
     frame3dd_io.c   input-output functions
