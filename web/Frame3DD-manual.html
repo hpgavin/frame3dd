@@ -76,7 +76,7 @@ Henri P. Gavin, Ph.D., P.E.
 
 <p><b>Frame3DD</b> is preferably executed from the
 <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a> in <a href="https://en.wikipedia.org/wiki/Windows_Terminal">Windows</a>, 
-or <a href="https://en.wikipedia.org/wiki/Linux_console">Linux</a> or macOS  <a href="https://en.wikipedia.org/wiki/Terminal_(macOS)">macOS</a>  as follows: 
+or <a href="https://en.wikipedia.org/wiki/Linux_console">Linux</a> or <a href="https://en.wikipedia.org/wiki/Terminal_(macOS)">macOS</a>  as follows: 
 <pre>
 frame3dd inputfile.3dd outputfile.txt
 </pre>
@@ -179,12 +179,16 @@ via <a href="http://www.gnuplot.info/">gnuplot</a> version 4.6.
 <ol>
 <li>Read the User Manual and Reference (this file).
 <li>
-<a href="https://github.com/hpgavin/frame3dd/">Clone from GitHub</a> <br> 
+<a href="https://github.com/hpgavin/frame3dd/">Clone from GitHub</a> and copy the executable program for your OS
 <pre>
 cd ~/Desktop/Code
 git clone http://github.org/hpgavin/frame3dd 
+cp frame3dd/build/Win11/frame3dd.exe .       # Windows
+cp frame3dd/build/macOS/framd3dd .           # macOS
+cp frame3dd/build/linux/framd3dd .           # linux
 </pre>
 <a href="http://sourceforge.net/project/platformdownload.php?group_id=221386"> Downloads from Sourceforge</a> are no longer updated <br> 
+Note: At the moment (December 2025) the build for macOS and Win11 may be out of date, and may need to be re-compiled.   See section 3.4 below.  
 
 <li>Optionally, install <a href="http://gnuplot.info>">gnuplot</a> for your operating system (more details below).
 <li>Open a terminal, go to the Frame3DD directory, and run the program on one of the examples using a command like ...
@@ -192,7 +196,8 @@ git clone http://github.org/hpgavin/frame3dd
 cd ~/Desktop/Code/frame3dd
 frame3dd  examples/exE.3dd  examples/exE.out
 </pre>
-<li>Open the Output Data file using a <a href="https://code.visualstudio.com/download">good text editor</a> and view the Output Data.
+<li>Open the Output Data file using a good text editor (VS Code, or TextEdit (macOS), Notebook (Windows), Gedit (linux))
+and view the Output Data.
 <li>Plot the structural configuration, the deformed structural shape, and mode-shapes, by starting <a href="http://www.gnuplot.info/">gnuplot</a>, and typing
 <pre>
      gnuplot>   cd 'Desktop/Code/frame3dd/examples'
@@ -228,11 +233,14 @@ and the <a href="#InputData"><b>Input Data format</b></a>, with the <a href="#Va
 </p>
 <p>
 You may edit Input Data files using a good text editor
+(VS Code, or TextEdit (macOS), Notebook (Windows), Gedit (linux))
+<!-- 
 (<a href="https://code.visualstudio.com/download">VS Code</a> 
  <a href="http://www.vim.org/others.php">vim/evim/gvim</a>,
  <a href="http://www.gnome.org/projects/gedit/">gedit</a>,
  <a href="http://www.jedit.org/index.php">jEdit</a>,
  <a href="http://www.nano-editor.org/">nano</a>,
+--> 
 <!-- <a href="http://www.barebones.com/products/textwrangler/">TextWrangler (OS X)</a>, -->
 <!-- 
  <a href="http://emacsformacosx.com/">Emacs for OS X</a>, 
@@ -305,9 +313,9 @@ The date stamp at the beginning of the manual corresponds to the release date of
 <li>
 Open a Terminal and edit your OS's profile
 <pre>
-notepad $PROFILE       # Windows
-TextEdit ~/.zprofile   # macOS
-pico ~/.profile        # linux
+notepad $PROFILE        # Windows
+TextEdit ~/.zprofile    # macOS
+Gedit ~/.profile        # linux
 </pre>
 <li> Copy-and-paste the OS-appropriate section of code below into the beginning of <b>~/.profile</b>(linux)  or <b>~/.zprofile</b>(macOS) or <b>$PROFILE</b>(Windows) 
 <pre>
@@ -357,7 +365,8 @@ frame3dd  examples/exE.3dd  examples/exE.out
 Some run-time information will be displayed on the Terminal and
 the results of your Frame3DD analysis will have been appended to the end of the <b>examples/exE.out</b> Output Data file.
 Data files used primarily for plotting are stored in <b>$FRAME3DD_OUTDIR</b> .
-<li>       You may view Output Data files and edit Input Data files using a good text editor (VS Code, orTextEdit (macOS), Notebook (Windows), pico (linux))
+<li>       You may view Output Data files and edit Input Data files using a good text editor
+(VS Code, or TextEdit (macOS), Notebook (Windows), Gedit (linux))
 or a spreadsheet program (google docs or libreoffice or excel) 
 to read or edit the Input Data file. 
 <!-- 
@@ -420,8 +429,8 @@ Or hit <b>CTRL-C</b> to stop the plots at the current plot.
 <li> Install a C compliler for your OS
 <ul>
 <li> (macOS) Install <a href="https://developer.apple.com/xcode/">Xcode</a>
-<li> (Win11} Install <a href="https://code.visualstudio.com/docs/cpp/config-mingw">gcc</a>
-<li> (linux) 
+<li> (Win11) Install <a href="https://code.visualstudio.com/docs/cpp/config-mingw">gcc</a>
+<li> (linux) Install <a href="https://gcc.gnu.org/gcc">gcc</a>
 <pre>
 sudo apt install build-essential
 </pre>
