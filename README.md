@@ -10,11 +10,11 @@
 
 **FRAME3DD** appends results to an Output Data File, The Output Data recapitulates the input information, gives joint displacements in global coordinates, member end-forces in local coordinates, reactions in global coordinates, and natural frequencies and mode shapes in global coordinates.
 
-For usage information, see the User Manual, included with both the source code and binary installer packages.
+For usage information, see the user manual. 
 
-Additional output files from **FRAME3DD** are directed by default to the temporary file folder (according to the %TEMP% env var on Windows, or /tmp on other platforms). You can specify an alternative location for output files by setting the environment variable FRAME3DD_OUTDIR.
+Additional output files from **FRAME3DD** are directed by default to temporary directory (according to the %TEMP% env var on Windows, or /tmp on other platforms). You can specify an alternative location for output files by setting the environment variable FRAME3DD_OUTDIR.
 
-Note that you require write permissions for the input file in order that **FRAME3DD** can append its calculation results to that file.
+Note that write permissions for the input file are required for **FRAME3DD** to append its calculation results to that file.
 
 ---
 
@@ -23,7 +23,7 @@ Note that you require write permissions for the input file in order that **FRAME
 
 ---
 
-You should have obtained this distribution from github.com
+Please clone this distribution directly from github.com
 
 git clone http://www.github.com/hpgavin/frame3dd
 
@@ -31,7 +31,7 @@ git clone http://www.github.com/hpgavin/frame3dd
 
 * [Frame3DD homepage](https://hpgavin.github.io/frame3dd/index.html)
 
-* [Frame3DD manual](https://hpgavin.github.io/frame3dd/web/Frame3DD-manual.html)
+* [Frame3DD user manual](https://hpgavin.github.io/frame3dd/web/Frame3DD-manual.html)
 
 ---
 
