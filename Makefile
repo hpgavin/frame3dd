@@ -42,5 +42,5 @@ install:
 	mv $(TARGET) /usr/local/bin/.
 
 clean :
-	rm $(DIR_OBJ)/*.* 
+	rm $(DIR_OBJ)/*.o 
 
